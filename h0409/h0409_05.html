@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>네이버</title><link rel="icon" href="favicon.ico">
+        <style>
+            *{margin:0; padding:0; letter-spacing:-0.5px}
+            #main{margin:30px 20px 30px 0px;}     /* top, right, bottom, left */
+            #up{ width:282px; height:210px ;    /* 가로크기, 세로크기 */
+                 overflow:hidden; /* 넘치는 부분 삭제 */
+                 box-sizing: border-box;
+                }
+            img{ width:120%; }
+            #down{ width:282px; height:220px;
+                   border-left:1px solid rgb(234,234,234);
+                   border-right:1px solid rgb(234,234,234);
+                   border-bottom:1px solid rgb(234,234,234);
+                   box-shadow: 0 1px 10px 0 rgba(0,0,0,0.06);
+                   padding-left:20px; padding-top:15px;
+                   box-sizing: border-box; /* 여백은 포함하지 말 것*/ 
+                }
+            #down>span{ color:#6672a4; font-size:13px; }
+            #down>h3{ color:#111111; font-size:17px; padding-top:5px; padding-bottom:12px; }
+            #down>p{ color:#333; font-size:13px; }
+            #down>h2{ color:#111; font-size:22px; padding-top:18px; }
+            #down>h2>span{ font-size:17px; font-weight:400; }
+            body{ display:flex; } /* 옆으로 배치 */
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="up">
+                <img src="japan1.jpg">
+            </div>
+            <div id="down">
+                <span>항공+숙소(에어텔)</span>
+                <h3>도쿄 3일 자유여행</h3>
+                <p>#아사쿠사 숙박 #가성비</p>
+                <h2>518,900<span>원~</span></h2>
+            </div>
+        </div>
+        <div id="main">
+            <div id="up">
+                <img src="oosaka.jpg">
+            </div>
+            <div id="down">
+                <span>패키지</span>
+                <h3>오사카 3,4일</h3>
+                <p>#시내호텔 #꽉찬일정</p>
+                <h2>589,900<span>원~</span></h2>
+            </div>
+        </div>
+        <div id="main">
+            <div id="up">
+                <img src="kyushu.jpg">
+            </div>
+            <div id="down">
+                <span>패키지</span>
+                <h3>규슈 3,4일</h3>
+                <p>#베스트셀러 #가성비</p>
+                <h2>419,900<span>원~</span></h2>
+            </div>
+        </div>
+           
+    </body>
+</html>
