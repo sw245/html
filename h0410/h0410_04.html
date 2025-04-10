@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>한미글로벌</title>
+    <style>
+        *{ letter-spacing:-0.5px; }
+        table{margin:50px auto; border-collapse:collapse;}
+        th{border:1px solid #ddd; border-top:1px solid black;
+            height:47px; background-color:#f7f7f7; font-size:18px;}
+        td{border:1px solid #ddd; height:40px; text-align:center;
+            color:#666; font-size:16px;}
+        #Bp{color:#00478b; font-weight:600;}
+        .t1{border-left:none;}
+        .t3{border-right:none;}
+        /*넓이: 190,190,410px*/
+        /*높이: 47,40,40px*/
+    </style>
+    </head>
+    <body>
+        <table>
+            <colgroup>
+                <col width="190px">
+                <col width="190px">
+                <col width="410px">
+            </colgroup>
+            <tr>
+                <th class="t1">구분</th>
+                <th>등급</th>
+                <th class="t3">종합등급</th>
+            </tr>
+            <tr>
+                <td class="t1">환경</td>
+                <td>A</td>
+                <td rowspan="3" class="t3" id="Bp"><strong>B+</strong></td>
+            </tr>
+            <tr>
+                <td class="t1">사회</td>
+                <td>A+</td>
+            </tr>
+            <tr>
+                <td class="t1">지배구조</td>
+                <td>B</td>
+            </tr>
+        </table>
+    </body>
+</html>

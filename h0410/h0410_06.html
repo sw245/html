@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <script>    // 자바스크립트 선언
+        function btn(){             // 자바스크립트 함수선언
+            var htmlData = "";
+            var hdata = "<tr><td>20</td><td>[매드포갈릭] 리솜 멤버십 회원 특별 혜택 (~4.30)</td>\
+                <td>포레스트</td><td>2025-03-12</td></tr>";
+            // 반복문 10번 >> 게시글 표 10개 생성
+            for(var i=0;i<10;i++){
+                htmlData += `<tr><td>${i+1}</td><td>[매드포갈릭] 리솜 멤버십 회원 특별 혜택 (~4.30)</td>\
+                    <td>포레스트</td><td>2025-03-12</td></tr>`
+            };
+            // document.getElementById("tbody").innerHTML(hdata);
+            $("#tbody").html(htmlData);
+            alert("게시글 정보를 가져옵니다.");
+        };
+
+    
+
+        function insertBtn(){
+            alert("게시글이 등록되었습니다.")
+            var idata = "<tr><td>20</td><td>리솜리조트 사이트 오픈</td>\
+            <td>관리자</td><td>2025-04-10</td></tr>"
+            $("#tbody").prepend(idata);     // 위쪽에 넣기   // prepend, append, html
+        };
+            
+    </script>
+    <style>
+        *{ padding:0; margin:0;}
+        table{border-top:2px solid #424242; border-bottom:2px solid #424242;
+            border-collapse:collapse; width:1000px; margin:50px auto;
+            text-align:center; 
+        }
+        th,td{border-bottom:1px solid #e3e3e3; }
+        th{height:48px;}
+        td{height:45px;}
+        .btnGroup{display:flex; margin:0 auto; width:420px; }
+        .btnGroup div{ margin:5px;
+            border:1px solid black; background:#efefef;
+            width:200px; height:40px; text-align:center;
+            line-height:40px; }
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col width="100px">
+            <col width="600px">
+            <col width="200px">
+            <col width="100px">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>리조트</th>
+                <th>등록일자</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td colspan="4">데이터가 없습니다.</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="btnGroup">
+        <div onclick="btn()">불러오기</div>
+        <div onclick="insertBtn()">추가하기</div>
+    </div>
+        <!-- <div onclick="btn()">클릭</div> -->     <!--자바스크립트 btn함수 호출 -->
+
+</body>
+</html>
