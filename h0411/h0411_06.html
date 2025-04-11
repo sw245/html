@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{margin:0; padding:0; letter-spacing: -0.5px;}
+            /* 레이아웃 */
+            section{ display:flex;  margin:150px auto; width:1100px; border-top:1px solid black; }
+            .sub1{border-right:1px solid #f2f2f2; width:120px; height:1000px;}
+            .sub2{ width:650px; height:1000px; border-right:1px solid #f2f2f2 }
+            .sub3{ width:330px; height:1000px;}
+            .article{ display:flex; margin:20px 0 0 30px; border-bottom:1px solid #f2f2f2; padding-bottom:20px; }
+            .text{margin-left:10px}
+
+            /* 컴포넌트 */
+            .sub1 h1{font-size:17px; font-weight:600; margin-top:25px; padding-bottom:10px; width:90px;
+                border-bottom:1px solid black;} 
+            .sub1 h3{font-size:15px; font-weight:400}
+            .sub2 h1{font-size:16px; margin-left:30px; margin-top:25px;}
+            .text h3{ font-size:15px; margin-bottom:3px; }
+            .text p{ font-size:13px; margin-bottom:8px; color:#767678; font-weight:500 }
+            .text h4{ font-size:12px; color:#929298; }
+            img{width:115px; height:75px;}
+            a{color:inherit; text-decoration:none;}
+        </style>
+    </head>
+    <body>
+        <section>
+            <div class="sub1">
+                <h1>IT 과학</h1>
+                <div>
+                    <h3>모바일</h3>
+                    <h3>인터넷/SNS</h3>
+                    <h3>통신/뉴미디어</h3>
+                    <h3>IT 일반</h3>
+                    <h3>보안/해킹</h3>
+                    <h3>컴퓨터</h3>
+                    <h3>게임/리뷰</h3>
+                    <h3>과학 일반</h3>
+                </div>
+            </div>
+            <div class="sub2">
+                <h1>헤드라인 뉴스</h1>
+                <div class="article">
+                    <a href="https://n.news.naver.com/mnews/article/016/0002455767" target="_blank"><img src="images/news4.jpg"></a>
+                    <div class="text">
+                        <a href="https://n.news.naver.com/mnews/article/016/0002455767" target="_blank"><h3>챗GPT, 새 기능 추가…이전 대화 기반 개인화된 답변 제공</h3></a>
+                        <p>챗GPT 개발사 오픈AI가 챗GPT에 새로운 메모리 기능을 도입한다고 10일(현지시간) 발</p>
+                        <h4>헤럴드 경제</h4>
+                    </div>
+                </div>
+                <div class="article">
+                    <a href="https://n.news.naver.com/mnews/article/016/0002455767" target="_blank"><img src="images/news4.jpg"></a>
+                    <div class="text">
+                        <a href="https://n.news.naver.com/mnews/article/016/0002455767" target="_blank"><h3>챗GPT, 새 기능 추가…이전 대화 기반 개인화된 답변 제공</h3></a>
+                        <p>챗GPT 개발사 오픈AI가 챗GPT에 새로운 메모리 기능을 도입한다고 10일(현지시간) 발</p>
+                        <h4>헤럴드 경제</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="sub3">
+
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="send.html" method="get"> <!-- 보안 중요:post // 드러나도 괜찮은 것:get -->
+        <input type="hidden" name="ip" value="127.0.0.1">
+        <label>검색</label>
+        <input type="search" name="search"><br> <!-- text와의 차이는 한번에 지우는 버튼 하나-->
+        <label>달력</label>
+        <input type="date" name="date"><br> 
+        <label>이메일</label> <!-- @ 가 없으면 문구 표시해줌 -->
+        <input type="email" name="email"><br>
+        <label>아이디</label>
+        <input type="text" name="id" id="id" maxlength="5"> 
+        <!--type="text" 텍스트로 입력받는 폼 // name 서버변수 // id: document에서 찾아가는 위치점?? // -->
+        <br>
+        <label>패스워드</label>
+        <input type="password" name="pw" id="pw">
+        <br>
+        <input type="submit" value="로그인">
+    </form>
+</body>
+</html>

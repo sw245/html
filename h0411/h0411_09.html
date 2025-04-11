@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script>
+            function mbtn(){
+                var chkId = document.getElementById("id").value.length; //입력된 자릿수
+                if (chkId<2){
+                    alert("아이디는 2자리 이상 입력하셔야 로그인이 가능합니다.");
+                    document.getElementById("id").value="";   // input 데이터 삭제
+                    document.getElementById("id").focus();    // input 커서 이동
+                    return;
+                }
+                memberFrm.submit();  // 이름이 memberFrm action으로 이동
+            }
+        </script>
+    </head>
+
+    <body>
+        <!-- api 전송방식? : get,post,update,delete -->
+        <!-- form: action-이동 페이지?? / target-새 창? 바로? / method- 전송방식 get, post 등 -->
+        <form action="send.html" name="memberFrm" method="post">
+            <label>아이디</label>
+            <input type="text" name="id" id="id"><br>
+            <label>패스워드</label>
+            <input type="text" name="pw"><br>
+            <input type="button" onclick="mbtn()" value="로그인">
+            <!-- <input type="submit" value="로그인"> -->
+
+        </form>
+    </body>
+</html>
