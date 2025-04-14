@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 아이디, 패스워드 ,전화번호, 성별, 취미-골프 수영 조깅 독서 입력받는 폼 작성-->
+    <h2>회원가입</h2>
+    <form action="#" method="get" name="frm"> 
+        <label>아이디</label><input type="text" name="id" autofocus value="aaa" readonly></form><br> 
+        <!-- autofocus: 페이지 시작 시 커서 위치 placeholder: 인풋창 설명문 readonly: 인풋박스의 글자 수정 불가(데이터는 전송) -->
+        <label>패스워드</label><input type="password" name="pw" placeholder="7자리 이상만 가능" required></form><br>
+        <!-- disabled: 데이터를 전송하지 않음 required: 필수입력 -->
+        <label>전화번호</label><input type="text" name="phone" autofocus value="010-0000-0000" disabled></form><br>
+        <label>성별</label><br>
+            <label for="male">남성</label><input type="radio" name="gender" id="male" value="male"></form>
+            <label for="female">여성</label><input type="radio" name="gender" id="female" value="female"></form><br>
+        <label>취미</label> <!-- checked 미리 체크됨 -->
+            <label>골프</label><input type="checkbox" name="hobby" checked value="golf"></form>
+            <label>수영</label><input type="checkbox" name="hobby" value="swimming"></form>
+            <label>조깅</label><input type="checkbox" name="hobby" value="jogging"></form>
+            <label>독서</label><input type="checkbox" name="hobby" value="reading"></form><br>
+        <input type="submit" value="가입완료">
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{color:gray;}
+        /* 태그 선택자 */
+        h2{color:green;}
+        li{font-size:20px;}
+        /* 클래스 선택자 - 지정한 클래스를 여러 군데에서 사용 가능 */
+        .color{color:red; font-size:25px; }
+        /* id 선택자 - 지정한 곳 단 한 군데에서 사용 (원칙) */
+        #id01{font-size:14px; color:blue;}
+        span{color:violet;}
+        .s02{color:blue; font-weight:700;}
+    </style>
+</head>
+<body>
+    <h2>선택자 종류</h2>
+    <ul>
+        <li>태그 선택자</li>
+        <li class="color">class 선택자</li>
+        <li class="color "id="id01">id 선택자</li>
+    </ul>
+    <div class="color">글자색상확인</div>
+    <p>
+        <span>미국 상무부</span>가 반도체 관세 부과로 이어질 수 있는 국가안보 조사에 곧 착수할 것이라는 보도가 나왔다. 
+        <span class="s02">하워드 러트닉</span> 미 상무장관은 1~2개월 내 반도체 관세가 시행될 수 있으며, 이 같은 품목별 관세는 협상 대상에서 제외될 것이라고 밝혔다.
+    </p>
+</body>
+</html>
