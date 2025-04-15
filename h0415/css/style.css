@@ -1,0 +1,71 @@
+*{padding:0; margin:0;
+    font-family:'Pretendard-Regular'  }
+a{text-decoration:none; color:inherit;}
+ul,ol{list-style:none;}
+
+    @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gyeonggi_Title_Medium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Title_Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+section{
+    width:100%; height:566px;
+    
+}
+
+.tour{
+    width:1200px; height:566px; border:1px solid black;
+    margin:0 auto;
+    background:url('../images/097.jpg') no-repeat;
+    display:flex;
+    align-items:center; box-sizing: border-box;
+}
+
+.prod{
+    width:300px; height:430px;
+    box-sizing: border-box; padding-left:55px;
+}
+.prod strong{
+    font-size:36px; font-weight:600; color:white;
+    margin-bottom:35px; display:block; font-family:'Gyeonggi_Title_Medium';
+    font-weight:300; line-height:46.8px;
+}
+
+
+.photo-tab .t{ 
+    box-sizing:border-box; border-radius:18px; padding-left:20px; height:36px; 
+    margin-bottom:13px; font-size:15px; line-height:36px; background:white;
+}
+.photo-tab .t1{
+    width:193px; background:#252525;
+    color:white; 
+}
+.t2{
+    width:205px; 
+}
+.t3{
+    width:233px;
+}
+.t4{
+    width:185px;
+}
+
+.type{width:900px; height:430px;}
+
+.type ul{
+    width:900px; height:430px;
+    display:flex; justify-content: space-between; align-items:center;
+}
+
+.type li{
+    width:280px; height:428px; border:1px solid rgb(234,234,234);
+    box-shadow:0 1px 10px 0 rgba(0,0,0,0.06); background:white;
+}

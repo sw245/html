@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{padding:0; margin:0;}
+    div{
+        
+    }
+    #d01{ 
+        /* border:5px solid black;  한 줄로 사용 가능  */ 
+        border-width:5px 10px 20px 30px; /* top right bottom left */
+        border-style:solid;
+        border-color:black;
+    }
+    #d02{ 
+        border-width:5px 10px 20px; /* 세 요소일 때는 가운데 요소가 <좌우>를 의미 (top  left-right  bottom) */
+        border-style:solid;
+        border-color:black;
+    }
+    #d03{ 
+        border-width:5px 10px;  /* top-bottom  left-right */
+        border-style:solid;
+        border-color:black;
+        
+        border-radius:20px;     /* 모서리 둥글게 */
+    }
+
+    #d04{}
+
+</style>
+<body>
+    <div id="d01">1</div>
+    <hr>
+    <div id="d02">2</div>
+    <hr>
+    <div id="d03">3</div>
+    <hr>
+    <div id="d04">4</div>
+</body>
+</html>
