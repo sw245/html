@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <title>title</title>
+        <style>
+            *{margin:0; padding:0; font-size:20px;}
+            div{width:200px;height:200px;
+                border:2px solid black;
+            }
+            #container{
+                width:800px; height:800px; border:5px solid green;
+                margin:50px auto;
+            }
+            .c{box-sizing:border-box;}
+            .c0{ position:relative; left:400px; top:200px; 
+                background:orangered; z-index:10;}
+            .c1{ position:relative; left:300px; top:150px;  
+                background:aqua;}
+            .c2{ position:relative; left:450px; top:-100px; 
+                background:green; z-index:12;}
+            .c3{ position:relative; left:100px; top:200px; 
+                background:pink }
+            .c4{ position:absolute; left:100px; top:100px; 
+                background:orange}
+        </style>
+    </head>
+    <body>
+        <h2 id="first">위치소개</h2>
+        <div id="container">
+            <div class="c c0">0</div>
+            <div class="c c1">1</div>
+            <div class="c c2">2</div>
+            <div class="c c3">3</div>
+            <div class="c c4">4</div>
+        </div>
+    </body>
+</html>

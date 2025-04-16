@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <title>DAUM</title>
+        <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            function fbtn(){
+                console.log("체크박스 개수 :", $("input[type='checkbox']").length);
+                console.log("체크된 개수 :", $("input[type='checkbox']:checked").length);
+            }
+        </script>
+        <style>
+            *{margin:0; padding:0;}
+            h2~ul{color:red}
+            a[href]{font-size:30px;}
+            label[for="female"]{font-size:30px;}
+        </style>
+    </head>
+    <body>
+        <form>
+            <label>아이디</label>
+            <input type="text" name="id"><br>
+            <label>성별</label><br>
+            <label for="male">남자</label>
+            <input type="radio" name="gender" id="male" value="남자">
+            <label for="female">여자</label>
+            <input type="radio" name="gender" id="female" value="여자"><br>
+            <label>취미</label><br>
+            <label for="golf">골프</label>
+            <input type="checkbox" name="hobby" id="golf" value="golf"><br>
+            <label for="swimming">수영</label>
+            <input type="checkbox" name="hobby" id="swimming" value="swimming"><br>
+            <label for="jogging">조깅</label>
+            <input type="checkbox" name="hobby" id="jogging" value="jogging"><br>
+
+            <button type="button" onclick="fbtn()">확인</button>
+        </form>
+
+        <h2>유용한 정보</h2>
+        <ul>
+            <li>네이버</li>
+            <li>다음</li>
+            <li><a href="#">구글</a></li>
+            <li>쿠팡</li>
+        </ul>
+        <hr>
+        <ul>
+            <li><a href="#">사과</a></li>
+            <li>배</li>
+            <li>바나나</li>
+            <li>포도</li>
+        </ul>
+    <div>
+        <ul>
+            <li>감사</li>
+        </ul>
+    </div>
+        <hr>
+    </body>
+</html>
