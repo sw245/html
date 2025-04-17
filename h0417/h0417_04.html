@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        h4{text-align:center;}
+        img{width:400px;}
+        .rotate{width:400px; height:300px; border:1px solid black; margin:50px auto;}
+        .rotate img{width:400px; backface-visibility:hidden;}
+        .rotate img:hover{animation:shape4 1s; animation-fill-mode: both;}
+        @keyframes shape4{
+            from{transform:rotateY(0); }
+            to{transform:rotateY(135deg); }
+        }
+
+        .rotate2{width:400px; height:300px; border:1px solid black; margin:50px auto;}
+        .rotate2 img{width:400px; backface-visibility:visible;}
+        .rotate2 img:hover{animation:shape4 3s alternate infinite;}
+        @keyframes shape4{
+            from{transform:rotateY(0); }
+            to{transform:rotateY(180deg); }
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h4>뒷배경1</h4>
+        <div class="rotate">
+            <img src="images/kim.jpg">
+        </div>
+    </div>
+    <div>
+        <h4>뒷배경2</h4>
+        <div class="rotate2">
+            <img src="images/kim.jpg">
+        </div>
+    </div>
+</body>
+</html>

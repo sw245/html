@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="radio"]:not(old) + label{ 
+            /* :not() >> 형태 초기화하기. ()에 아무 문자나 넣으면 됨?  */
+            border:1px solid green;
+        }
+
+        input[type="radio"]:not(old):checked + label{
+            /* :checked >> radio 항목이나 checkbox 항목이 체크됐을 때 */
+            background:green; color:white; font-weight:700;
+        }
+
+        h2 + p{
+            width:500px; height:40px; border:1px solid black; text-align:center;
+        }
+
+        h2 + p:hover{
+            /* :hover >> 마우스 포인터가 해당 항목에 올려졌을 때 */
+            background:black; color:white; font-weight:700;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <p>회원가입을 하시면 많은 혜택이 주어집니다. 회원가입 ㄱ</p>
+    <form>
+        <label>성별</label><br>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">남성</label>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">여성</label>
+    </form>
+</body>
+</html>

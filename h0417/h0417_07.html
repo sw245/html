@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        h4{text-align:center; margin:20px;}
+        
+        .shape{
+            margin:50px auto;
+            width:100px; height:100px;
+            background:aqua;
+            animation:change 1s alternate infinite;
+        }
+
+
+        @keyframes change{
+            from{
+                background:navy;
+                transform: perspective(60px) rotateX(0deg) rotateY(0deg);
+                /* border:3px solid navy; */
+            }
+            50%{
+                background:blue;
+                transform: perspective(60px) rotateX(-600deg) rotateY(-600deg);
+            }
+            to{
+                background:aquamarine;
+                /* border:3px dotted blue; */
+                /* border-radius:50%; */
+                transform: perspective(60px) rotateX(-1800deg) rotateY(-1800deg);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <h4>3d animation</h4>
+        <div class="shape">
+
+    </div>
+</body>
+</html>

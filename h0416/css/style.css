@@ -75,12 +75,14 @@ nav{width:100%; height:81px; border-bottom:1px solid black;}
 
 
 
-/* 페이지 내용 */
+/*// 페이지 내용 //*/
+
+/* 레이아웃 구성 ?? */
 #content{
-    width:100%; height:1200px;
+    width:100%;
 }
 section{
-    width:1000px; height:1200px; margin:0 auto;
+    width:1000px; margin:0 auto;
 }
 
 .location ul{
@@ -105,9 +107,6 @@ section h3{
     font-size:40px; font-weight:700; color:#333; text-align: center; margin:25px 0 40px;
 }
 
-.join-step{
-    margin-bottom:13px;
-}
 .join-step ul{
     display:flex; text-align:center;
 }
@@ -133,6 +132,7 @@ section h4{
     width:1000px; height:36px; box-sizing:border-box;
     padding:0 0 10px 10px;
     font-size:20px; color:#333; font-weight:700; 
+    margin-top:40px;
 }
 
 section h4>span{
@@ -174,6 +174,10 @@ section td span{
     font-size:13px; color:#555; margin-top:5px; font-weight:600;
 }
 
+
+
+
+/* form 내용 구성 */
 .form-email td>input{
     width:134px;
 }
@@ -211,21 +215,195 @@ section td span{
 }
 
 .form-birth div{
-    width:150px; height:20px; margin-top:10px;
+    margin-top:10px;
 }
 
-.form-birth label{
+.form-news div,.form-sms div{
+    display:inline;
+}
+
+.form-job select{
+    width:200px; height:34px;
+}
+
+.form-interest div{
+    width:800px; height:81px;
+}
+
+.form-interest ul{
+    display:flex; justify-content: space-between;
+    align-content: space-between; flex-wrap:wrap;
+}
+
+.form-interest li{
+    width:126px; margin:5px 0;
+}
+
+form input[type="checkbox"]:not(old){ width:24px; height:20px; opacity:0; }
+
+form input[type="checkbox"]:not(old) + label{
+    width:24px; height:24px; vertical-align:middle;
+    margin:0 0 0 -24px; padding-left:24px;
+    background:url('../images/join/radio_off.jpg') no-repeat 0 2px;
+}
+
+form input[type="checkbox"]:not(old):checked + label{
+    background:url('../images/join/radio_on.jpg') no-repeat 0 2px;
+}
+
+
+
+/* form 공통영역 */
+
+form td div{
+    width:150px; height:30px;
+}
+
+form td label{
     font-size:13px; font-weight:700; color:#555;
 }
 
-.form-birth input[type="radio"]:not(old){ width:24px; height:20px; opacity:0; }
+form input[type="radio"]:not(old){ width:24px; height:20px; opacity:0; }
 
-.form-birth input[type="radio"]:not(old) + label{
-    width:24px; height:24px;
+form input[type="radio"]:not(old) + label{
+    width:24px; height:24px; vertical-align:middle;
     margin:0 10px 0 -24px; padding-left:24px;
     background:url('../images/join/radio_off.jpg') no-repeat 0 2px;
 }
 
-.form-birth input[type="radio"]:not(old):checked + label{
+form input[type="radio"]:not(old):checked + label{
     background:url('../images/join/radio_on.jpg') no-repeat 0 2px;
+}
+
+
+/* 하단 버튼부분 */
+
+.form-button{
+    width:1000px; height:58px; text-align:center; margin:15px auto 100px;
+}
+
+.form-button input{
+    width:100px; height:55px; font-size:15px; border:1px solid rgb(221,221,221);
+    font-weight:700
+}
+
+.form-button input[type="submit"]{
+    background:#8a8d8f; color:white;
+}
+
+.form-button input[type="reset"]{
+    background:white; color:rgb(85,85,85);
+}
+
+
+/* footer부분 */
+footer{
+    width:100%; height:213px; background:#202020; color:#808080;
+    
+}
+
+#footer-wrap{
+    width:1180px; height:177px; margin:0 auto;
+    display:flex; justify-content: space-between;
+}
+
+/* foot-logo */
+.foot-logo{
+    width:230px; height:177px;
+    padding-top:36px;
+}
+
+.foot-logo a{
+    display:block;
+    background:url('../images/ico_set.png') no-repeat -320px -320px;
+    background-size:800px 800px;
+    width:160px; height:48px; 
+}
+
+.foot-logo p{
+    font-size:12px; padding:45px 0 0 1px;
+}
+
+
+.foot-cs{
+    width:170px; height:177px; text-align:right; padding-top:32px;
+    padding-top:31px;
+}
+
+.foot-cs select{
+    width:150px; height:25px; font-size:13px; color:white; 
+    background:#202020; text-align:right;
+}
+
+.foot-cs div{
+    margin-top:25px; font-size:17px; font-weight:600;
+    letter-spacing:-1.5px; color:white; margin-right:6px;
+}
+
+.foot-cs span{
+    font-weight:400
+}
+
+.foot-cs a{
+    display:flex; width:88px; height:32px; border:1px solid white;
+    color:white; font-size:13px; font-weight:500;
+    line-height:30px; justify-content: center;
+    margin:38px 0 0 80px;
+    
+}
+
+.foot-info{
+    width:660px; height:177px; 
+}
+
+.foot-info ul{
+    display:flex; margin-top:35px;
+}
+
+.foot-info li:first-child{
+    padding-left:0px;
+}
+
+.foot-info li{
+    padding:0 25px; border-right:1px solid rgba(255,255,255,0.1);
+}
+
+.foot-info li:nth-child(2) a{
+    color:#bdd61a;
+}
+
+.foot-info li:last-child{
+    border:none;
+}
+
+.foot-info a{
+    font-size:13px; font-weight:700; letter-spacing: -1.5px; color:white;
+    height:26px; 
+}
+
+.foot-info div{ 
+    font-size:12px; letter-spacing:-1px; padding-top:18px;
+}
+
+.foot-info span{
+    display:inline-block; margin-top:8px; padding-right:6px;
+
+}
+
+.foot-info span:nth-child(2),
+.foot-info span:nth-child(5)
+{
+    padding:0 6px; border-left:1px solid rgba(255,255,255,0.1);
+}
+
+.foot-info span:nth-child(3),
+.foot-info span:nth-child(6),
+.foot-info span:nth-child(9)
+{
+    padding-left:6px; border-left:1px solid rgba(255,255,255,0.1);
+}
+
+.foot-info div a{
+    font-size:12px; font-weight:400; padding-left:3px; 
+    text-decoration-line:underline;
 }

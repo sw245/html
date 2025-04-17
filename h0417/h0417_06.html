@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        h4{text-align:center;}
+        
+        .shape{
+            margin:50px auto;
+            width:100px; height:100px;
+            background:aqua;
+            animation-name: change;
+            animation-duration: 2s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+
+
+        @keyframes change{
+            from{
+                background:aqua;
+                /* border:3px solid navy; */
+            }
+            to{
+                background:aquamarine;
+                /* border:3px dotted blue; */
+                border-radius:50%
+            }
+        }
+
+        .shape2{
+            margin:50px auto;
+            width:100px; height:100px;
+            background:aqua;
+
+            animation:change2 2s alternate infinite;
+            /*
+            animation-name: change2;
+            animation-duration: 2s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            */
+        }
+
+
+        @keyframes change2{
+            from{
+                background:aqua;
+                border:3px solid green;
+                transform: rotate(0deg);
+            }
+            to{
+                background:aquamarine;
+                border:3px dotted orangered;
+                border-radius:50%;
+                transform:rotate(45deg);
+                transform:translate(100px,0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h4>animation</h4>
+        <div class="shape">
+
+    </div>
+    <div>
+        <h4>animation2</h4>
+        <div class="shape2">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        h4{text-align:center;}
+        img{width:400px;}
+        .move{width:400px; height:300px; border:1px solid black; margin:50px auto;}
+        .scale{
+            width:400px; height:300px; border:1px solid black; margin:50px auto;
+            overflow:hidden;
+        }
+        .move img:hover{animation:shape2 1s alternate infinite;}
+        @keyframes shape2{
+            from{transform:translate(0,0)}
+            to{transform:translate(-200px,50px);}
+        }
+        .scale img:hover{animation:shape 1s; animation-fill-mode:both;}
+        @keyframes shape{
+            from{transform:scale(1.0)}
+            to{transform:scale(1.5);}
+        }
+        .rotate{width:400px; height:300px; border:1px solid black; margin:50px auto;}
+        .rotate img{width:300px;}
+        .rotate img:hover{animation:shape3 1s infinite; }
+        @keyframes shape3{
+            from{transform:rotate(0)}
+            to{transform:rotate(360deg);}
+        }
+        .skew{width:400px; height:300px; border:1px solid black; margin:50px auto;}
+        .skew img{width:400px;}
+        .skew img:hover{animation:shape4 1s; animation-fill-mode: both;}
+        @keyframes shape4{
+            from{transform:skew(0,0); transform-origin:left top;}
+            to{transform:skew(40deg,0); transform-origin:left top;}
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="move">
+            <h4>translate</h4>
+            <img src="images/k5_s_c7s.png">
+        </div>
+        <div class="scale">
+            <h4>scale</h4>
+            <img src="images/kim.jpg">
+        </div>
+        <div class="rotate">
+            <h4>rotate</h4>
+            <img src="images/img01.png">
+        </div>
+        <div class="skew">
+            <h4>skew</h4>
+            <img src="images/skew1.jpg">
+        </div>
+    </div>
+</body>
+</html>
