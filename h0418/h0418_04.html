@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- content = width=device-width 
+     :: 현재 디바이스의 폭을 페이지 폭으로 맞춤 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        ul,ol{list-style:none;}
+
+
+        body{
+            width:70%; margin:0 auto;
+        }
+        #top{
+            width:100%; height:100px;
+        }
+        #top ul{
+            display:flex;
+        }
+        #banner{
+            width:100%; height:400px;
+            background:url('images/img_re_main_slide_20231204-2_pc.png') no-repeat 0 -350px;
+        }
+        
+        .contents{
+            display:flex; height:300px;
+        }
+
+        #news{
+            width:50%;
+        }
+        #image{
+            width:50%;
+            background:url('images/winter.jpg') no-repeat;
+        }
+
+        /* 위에서 아래로 출력 >> 순서도 중요 */
+        @media screen and (max-width:800px){
+            #banner{
+                background:url(images/img_re_main_slide_20231204-2_mo.png) no-repeat 0 -550px;
+            }
+            .contents{
+                flex-direction:column ; width:100%; height:500px;
+            }
+            #news{
+                width:100%; height:200px;
+            }
+            #image{
+                width:100%; height:200px;
+            }
+        }
+
+        #footer{
+        width:100%; height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="top">상단TOP 부분
+            <ul>
+                <li>포레스트</li>
+                <li>스파&찜질방</li>
+                <li>객실</li>
+                <li>특별한 경험</li>
+            </ul>
+        </div>
+        <section>
+            <div id="banner"></div>
+            <div class="contents">
+                <div id="news">
+                    <ul>
+                        <h1>news</h1>
+                        <li>[매드포갈릭] 리솜 멤버십 회원 특별 혜택 (~4.30)</li>
+                        <li>안전한 먹거리 제공을 위해 한국식품안전관리인증원MOU체결</li>
+                    </ul>
+                </div>
+                <div id="image"></div>
+            </div>
+        </section>
+        <div id="footer">하단FOOTER 부분</div>
+    </div>
+</body>
+</html>

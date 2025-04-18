@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- content = width=device-width 
+     :: 현재 디바이스의 폭을 페이지 폭으로 맞춤 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        div{
+            box-sizing:border-box;
+        }
+        #top{
+            width:100%; height:200px; background:url('images/k5_s_c7s.png') no-repeat;
+            background-size:cover;
+        }
+        section{
+            display:flex; height:500px; 
+        }
+        #contents{
+            width:80%; background:gold;
+        }
+        #contents img{
+            width:100%;
+        }
+        #side{
+            width:20%; background:limegreen;
+        }
+        #footer{
+            width:100%; height:100px; background:orangered;
+        }
+
+        @media screen and (max-width:800px){
+            #side{display:none;}
+            #contents{width:100%;}
+            #top{background:url('images/img_re_main_slide_20231204-2_pc.png') no-repeat;}
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="top">상단TOP 부분</div>
+        <section>
+            <div id="contents">
+            </div>
+            <div id="side">오른쪽 부분</div>
+        </section>
+        <div id="footer">하단FOOTER 부분</div>
+    </div>
+</body>
+</html>

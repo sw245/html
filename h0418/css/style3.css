@@ -1,0 +1,145 @@
+/* 기본 페이지 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&family=Single+Day&display=swap');
+*{
+    margin:0; padding:0;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+a{text-decoration:none; color:inherit;}
+ul,ol{list-style:none;}
+table,td{border-collapse:collapse;}
+button{border:none;}
+
+
+/* 헤더 탑 */
+#header-top{
+    width:100%; height:35px; background:#202020;
+    display:flex; justify-content: flex-end;
+}
+#header-top ul{
+    width:400px; height:35px; line-height:33px;
+    display:flex; justify-content: space-between; margin-right:40px;
+    color:white; font-size:13px;
+}
+
+
+
+/* 내비게이션 */
+nav{width:100%; height:81px; border-bottom:1px solid black;}
+#nav_nav{
+    width:1840px; height:81px; align-items: center;
+    margin:0 auto; display:flex; justify-content: space-between;
+}
+.logo a{
+    width:100px; height:30px; display: inline-block;
+    background:url('../images/ico_set.png') -320px -385px no-repeat; background-size:800px 800px;
+}
+.menu{
+    width:700px; 
+}
+.menu ul{
+    display:flex; justify-content: space-between; 
+}
+.menu a{ 
+    line-height:81px; height:81px; display:inline-block;
+    box-sizing: border-box;
+    font-size:21px; font-weight:700; 
+}
+.menu a:hover{
+    color:rgb(75,9,0);
+}
+.q_menu{
+    width:103px; height:52px; 
+}
+.q_menu ul{
+    display:flex; justify-content: space-around;
+    font-size:12px; font-weight:600; color:#101010; letter-spacing: -0.5px;
+}
+#q_menu_img1, #q_menu_img2{
+    width:32px; height:32px; margin:0 auto;
+}
+#q_menu_img1{
+    background:url('../images/ico_set.png') -584px -320px no-repeat;
+    background-size: 800px 800px;
+}
+#q_menu_img2{
+    background:url('../images/ico_set.png') -628px -320px no-repeat;
+    background-size: 800px 800px;
+}
+
+
+
+/*// 페이지 내용 //*/
+
+/* 레이아웃 구성 ?? */
+
+main{
+    width:450px; margin:0px auto; 
+}
+
+main>h1{
+    width:100%; 
+    text-align: center; padding:70px 0;
+}
+
+#sect_login{
+    width:100%; 
+    margin-bottom: 100px;
+}
+
+#cjmem_info{
+    border:1px solid black;
+}
+
+#login_tab{
+    display:flex;
+}
+
+#login_tab li{
+    padding-bottom:0px; height:40px; line-height:40px;
+    font-size:13px; font-weight:700; color:#606060;
+    
+    margin:0 20px 20px 0;
+}
+
+#login_tab li:hover{
+    border-bottom:3px solid black; color:black;
+}
+
+#sect_login input{
+    width:100%; height:42px; box-sizing:border-box;
+    margin-bottom:5px; border:2px solid rgb(204,204,204);
+    padding-left: 10px; font-size:16px;
+}
+
+#find_menu{
+    display:flex; justify-content:space-between;
+    margin:10px 0;
+}
+
+#find_menu li span:nth-child(2){
+    color:rgb(204,204,204); font-weight:600; 
+    padding:0 5px 0;
+    position:relative; top:-2px;
+}
+
+#save_id:not(default){
+    width:1px; height:1px; opacity:0;
+}
+
+#save_id:not(default):checked + label{
+    background:url('../images/bt-login-checkbox-on-pc.svg') no-repeat 0 0;
+}
+
+#save_id:not(default) + label{
+    display:inline-block;
+    width:120px; height:40px; line-height:20px;
+    padding-left:30px;
+    background:url("../images/icon_chk_off.svg") no-repeat 2px 1.5px;
+}
+
+#sect_login button{
+    width:100%; height:55px; background:rgb(189,214,26);
+    font-size:18px; font-weight:700;
+}

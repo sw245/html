@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>COOKIT class</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-top">
+            <ul>
+                <li a href="#">회원가입</li>
+                <li a href="#">로그인</li>
+                <li a href="#">고객행복센터</li>
+                <li a href="#">배송지역검색</li>
+                <li a href="#">기프트카드 등록</li>
+            </ul>
+        </div>
+        <nav>
+            <div id="nav_nav">
+                <div class="logo">
+                    <a href="#"></a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <a href="#"><li>COOKIT소개</li></a>
+                        <a href="#"><li>COOKIT메뉴</li></a>
+                        <a href="#"><li>리뷰</li></a>
+                        <a href="#"><li>이벤트</li></a>
+                        <a href="#"><li>MY쿡킷</li></a>
+                    </ul>
+                </div>
+                <div class="q_menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div id="q_menu_img1"></div>
+                                <div>장바구니</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div id="q_menu_img2"></div>
+                                <div>메뉴찾기</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="banner"></div>
+    <div id="content">
+        <section>
+            <div class="location">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">회원정보 입력</a></li>
+                </ul>
+            </div>
+            <h3>회원가입</h3>
+            <div class="join-step">
+                <ul>
+                    <li><span>STEP.1</span><P>약관동의</P></li>
+                    <li><span>STEP.2</span><P>회원정보</P></li>
+                    <li><span>STEP.3</span><P>회원가입완료</P></li>
+                </ul>
+            </div>
+            <form action="#" method="post" name="memFrm">
+                <h4>필수 정보 입력 <span>(* 항목은 필수 항목입니다.)</span></h4>
+                <table>
+                    <tr>
+                        <th><span></span>이름</th>
+                        <td><input type="text" name="name"></td>
+                    </tr>
+                    <tr>
+                        <th><span></span>아이디</th>
+                        <!-- <script> 
+                            function mbtn(){
+                                alert("확인")
+                            }
+                        </script> -->
+                        <td>
+                            <input type="text" name="id">
+                            <button type="button" onclick="mbtn()">중복확인</button><br>
+                            <span>4~16자리의 영문, 숫자, 특수기호(_)만 사용하실 수 있습니다.</span><br>
+                            <span>첫 글자는 영문으로 입력해 주세요.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span></span>비밀번호</th>
+                        <td>
+                            <input type="password" name="pw"><br>
+                            <span>영문, 숫자, 특수문자 중 2종류 조합 시 10자리 이상 입력</span><br>
+                            <span>영문, 숫자, 특수문자 모두 조합 시 8자리 이상 입력</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span></span>비밀번호 확인</th>
+                        <td>
+                            <input type="password" name="pw2">
+                            <span>비밀번호를 다시 한 번 입력해 주세요.</span>
+                        </td>
+                    </tr>
+                    <tr class="form-email">
+                        <th><span></span>이메일</th>
+                        <td>
+                            <input type="text" name="email1"><span> @</span>
+                            <input type="text" name="email2">
+                            <select name="email-sel">
+                                <option value="">직접 입력</option>
+                                <option value="naver.com">네이버</option>
+                                <option value="daum.net">다음</option>
+                                <option value="gmail.com">구글</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="form-address">
+                        <th><span></span>주소</th>
+                        <td>
+                            <input type="text" name="postzip">
+                            <button type="button">우편번호</button><br>
+                            <input type="text" name="addr1">
+                            <input type="text" name="addr2">
+                        </td>
+                    </tr>
+                    <tr class="form-phone">
+                        <th><span></span>휴대전화</th>
+                        <td>
+                            <input type="text" name="phone1"><span> -</span>
+                            <input type="text" name="phone2"><span> -</span>
+                            <input type="text" name="phone3">
+                        </td>
+                    </tr>
+                    <tr class="form-birth">
+                        <th><span></span>생년월일</th>
+                        <td>
+                            <select name="birth1">
+                                <option value="">선택</option>
+                                <option value="1988">1988</option>
+                                <option value="1989">1989</option>
+                                <option value="1990">1990</option>
+                            </select>
+                            <span> 년</span>
+                            <select name="birth2">
+                                <option value="">선택</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <span> 월</span>
+                            <select name="birth3">
+                                <option value="">선택</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            <span> 일</span>
+                            <div>
+                                <input type="radio" name="calendar" id="solar" value="solar">
+                                <label for="solar">양력</label>
+                                <input type="radio" name="calendar" id="lunar" value="lunar">
+                                <label for="lunar">음력</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="form-gender">
+                        <th><span></span>성별</th>
+                        <td>
+                            <div>
+                                <input type="radio" name="gender" id="female" value="female"> <!--name변수 value값 형태로 데이터 전송-->
+                                <label for="female">여성</label>
+                                <input type="radio" name="gender" id="male" value="male">
+                                <label for="male">남성</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="form-news">
+                        <th><span></span>뉴스레터 수신여부</th>
+                        <td>
+                            <span>이메일을 통한 상품 및 이벤트 정보 수신에 동의합니다.</span>
+                            <div>
+                                <input type="radio" name="news" id="news-y" value="news-y">
+                                <label for="news-y">예</label>
+                                <input type="radio" name="news" id="news-n" value="news-n">
+                                <label for="news-n">아니오</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="form-sms">
+                        <th><span></span>SMS 수신여부</th>
+                        <td>
+                            <span>SMS를 통한 상품 및 이벤트 정보 수신에 동의합니다.</span>
+                            <div>
+                                <input type="radio" name="sms" id="sms-y" value="sms-y">
+                                <label for="sms-y">예</label>
+                                <input type="radio" name="sms" id="sms-n" value="sms-n">
+                                <label for="sms-n">아니오</label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <h4>분양 회원 정보 입력 <span>(다구좌 회원일 경우 가지고 계신 카드번호 중 하나를 입력해 주시면 됩니다.)</span></h4>
+                <table id="form-addi">
+                    <tr>
+                        <th>회원번호</th>
+                        <td>
+                            <input type="text" name="memNo">
+                            <span>하이픈(-)이나 띄어쓰기 없이 입력해 주시기 바랍니다.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>회원인증번호</th>
+                        <td>
+                            <input type="text" name="memcertiNo">
+                            <span>숫자 4자리 입력</span>
+                        </td>
+                    </tr>
+                </table>
+                <h4>선택 입력 정보 </h4>
+                <table>
+                    <tr class="form-job">
+                        <th>직업</th>
+                        <td>
+                            <select name="job">
+                                <option value="">선택</option>
+                                <option value="worker">회사원</option>
+                                <option value="businessowner">자영업자</option>
+                                <option>프리랜서</option>
+                                <option>기타</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>결혼여부</th>
+                        <td>
+                            <div>
+                                <input type="radio" name="marriage" id="married" value="married"> <!--name변수 value값 형태로 데이터 전송-->
+                                <label for="married">예</label>
+                                <input type="radio" name="marriage" id="notmarried" value="notmarried">
+                                <label for="notmarried">아니오</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="form-interest">
+                        <th>관심사</th>
+                        <td>
+                            <div>
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="computer" value="computer">
+                                        <label for="computer">컴퓨터/인터넷</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="movie" value="movie">
+                                        <label for="movie">영화/비디오</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="music" value="music">
+                                        <label for="music">음악</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="shopping" value="shopping">
+                                        <label for="shopping">쇼핑</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="game" value="game">
+                                        <label for="game">게임</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="art" value="art">
+                                        <label for="art">문화/예술</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="child" value="child">
+                                        <label for="child">육아/아동</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="cooking" value="cooking">
+                                        <label for="cooking">요리</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="homestyling" value="homestyling">
+                                        <label for="homestyling">인테리어</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="leisure" value="leisure">
+                                        <label for="leisure">레저/여가</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="health" value="health">
+                                        <label for="health">건강/다이어트</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="interest" id="fashion" value="fashion">
+                                        <label for="fashion">패션/미용</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-button">
+                    <input type="submit" value="가입하기">
+                    <input type="reset" value="취소하기">
+                </div>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <div id="footer-wrap">
+            <div class="foot-logo">
+                <a href="#"></a>
+                <p>© COOKIT ALL RIGHTS RESERVED</p>
+            </div>
+            <div class="foot-info">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">법적고지</a></li>
+                    <li><a href="#">사업자정보확인</a></li>
+                </ul>
+                <div>
+                    <span>씨제이제일제당(주)</span>
+                    <span>대표이사 : 손경식,강신호,신현재</span>
+                    <span>사업자등록번호 : 104-86-09535</span>
+                    <span>주소 : 서울 중구 동호로 330 CJ제일제당 센터 (우) 04560</span>
+                    <span>통신판매업신고 중구 제 07767호</span>
+                    <span>개인정보보호책임자 : 조영민</span>
+                    <br>
+                    <span>이메일 : cjon@cj.net</span>
+                    <span>호스팅제공자 : CJ올리브네트웍스㈜</span>
+                    <br>
+                    <span>고객님은 안전거래를 위해 현금등으로 결제시 LG U+ 전자 결제의 매매보호(에스크로) 서비스를 이용하실 수 있습니다. </span>
+                    <a href="#">가입 사실 확인</a>
+                </div>
+            </div>
+            <div class="foot-cs">
+                <select name="group">
+                    <option value="cj">CJ그룹계열사 바로가기</option>
+                    <option value="cj1">CJ푸드</option>
+                </select>
+                <div><span>고객행복센터 </span>1688-1920</div>
+                <a href="#">1:1문의</a><br>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
