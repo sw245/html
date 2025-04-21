@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="#" -->
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        div{
+            width:100px; height:50px; border:1px solid black;
+            text-align:center; line-height:49px;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <h2 id="bmi">BMI 계산하기</h2> <!--쿼리셀렉터 ( id ).innerText로 텍스트 할당-->
+
+    <label>신장</label>
+    <input type="text" name="height" id="height"> <!--쿼리셀렉터 ( id ).value로 입력값 할당-->
+    <label>cm</label>
+    <br>
+    <label>체중</label>
+    <input type="text" name="weight" id="weight">
+    <label>kg</label>
+    <br>
+    <button onclick="calBtn()">계산하기</button>
+    <div id="result">0</div>
+    <div id="result2">정상</div>
+
+
+
+
+
+    <script>
+        function calBtn(){
+            alert("계산하기 실행");
+            // <input>으로 받은 데이터는 전부 string은 아닌 듯
+            let height = document.querySelector("#height").value;       // value에 값을 넣으려면 뒤에 = 으로 값 대입
+            let weight = Number(document.querySelector("#weight").value);
+            let hm = height / 100
+            // console.log(document.querySelector("#bmi").innerText);    // innerText도 동일
+            let BMI = weight / (hm*hm);
+            document.querySelector("#result").innerText=BMI
+
+            console.log(document.querySelector("#height").value);
+            console.log(document.querySelector("#weight").value);
+            console.log(document.querySelector("#result").innerText);
+
+            if(BMI>=30){
+                document.querySelector("#result2").innerText="고도비만"
+            }else if(BMI>=25){
+                document.querySelector("#result2").innerText="비만"
+            }else if(BMI>23){
+                document.querySelector("#result2").innerText="과체중"
+            }else if(BMI>18.5){
+                document.querySelector("#result2").innerText="정상"
+            }else{
+                document.querySelector("#result2").innerText="저체중"
+            }
+
+        }
+
+
+        /*
+        
+        // 체중, 키(cm) 입력받아, 체중(kg) / (신장(m)X신장(m)) = BMI 지수 출력
+        
+        let weight = Number(prompt("체중(kg)을 입력하세요."));
+        let height = Number(prompt("신장(cm)을 입력하세요."));
+        let height_m = height / 100;
+        let BMI = weight / (height_m*height_m);
+        console.log("BMI 지수 :",BMI);
+        console.log("체중 :",weight);
+        console.log("키 :",height);
+        */
+
+
+        /*
+        // 국어, 영어, 수학 점수 입력 / 값 출력
+        let kor = Number(prompt("국어점수를 입력하세요."));  // 이렇게도 됨.
+        let eng = prompt("영어점수를 입력하세요.");
+        let math = prompt("수학점수를 입력하세요.");
+        // 콘솔에 출력
+        
+        eng = Number(eng);
+        math = Number(math);
+        console.log("국어 :", kor,"\t영어 :", eng,"\t수학 :", math);
+        console.log("합계 :", kor+eng+math,"\t평균 :", (kor+eng+math)/3);
+        */
+    </script>
+    
+</body>
+</html>

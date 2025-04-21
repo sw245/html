@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        table{margin:0 auto;}
+        h2{
+            text-align:center;
+        }
+        table,th,td{
+            border:1px solid black; border-collapse:collapse;
+        }
+        th,td{width:120px; height:40px; text-align:center;}
+        button{width:100%; height:30px;}
+        div{
+            width:100%; text-align:center;
+        }
+    </style>
+    <script>
+        // 갑자기 파이썬 복습:
+        // round() 반올림, ceil() 올림, floor() 버림
+        // 5/2 >> floor(5/2) == 몫
+
+        function cal(){
+            let kor = Number(document.querySelector("#kor").value);
+            let eng = Number(document.querySelector("#eng").value);
+            let total = document.querySelector("#total");
+            total.innerText = kor+eng;      // << 같은 형태로도 사용 가능
+            let avg = document.querySelector("#avg");
+            avg.innerText =(kor+eng) / 2;
+            
+        }
+        
+        /*
+        function calBtn(){
+            let kor = Number(document.querySelector("#kor").value);
+            let eng = Number(document.querySelector("#eng").value);
+            document.querySelector("#total").innerText=kor+eng;
+            document.querySelector("#avg").innerText=(kor+eng)/2;
+        }
+        */
+
+    </script>
+    
+</head>
+<body>
+    <h2>학생성적프로그램</h2>
+    <table>
+        <tr>
+            <th>과목</th>
+            <th>점수</th>
+        </tr>
+        <tr>
+            <td>국어</td>
+            <td><input type="text" onkeyup="cal()" name="kor_score" id="kor" value="0"></td>
+        </tr>
+        <tr>
+            <td>영어</td>
+            <td><input type="text" onkeyup="cal()" name="eng_score" id="eng" value="0"></td>
+        </tr>
+        <tr>
+            <td>합계</td>
+            <td><div id="total">0</div></td>
+        </tr>
+        <tr>
+            <td>평균</td>
+            <td><div id="avg">0</div></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><button onclick="calBtn()">저장</button></td>
+        </tr>
+
+    </table>
+    <label></label>
+</body>
+</html>

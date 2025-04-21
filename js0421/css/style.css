@@ -91,7 +91,7 @@ section{
 }
 
 .location li{
-    background:url('../images/join//bg_location_li.png') right no-repeat;
+    background:url('../images/join/bg_location_li.png') right no-repeat;
 }
 
 .location li:nth-child(3){

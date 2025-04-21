@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        h2{text-align:center;}
+        table{margin:0 auto; text-align:center;}
+        table,th,td{
+            border:1px solid black; border-collapse: collapse;
+        }
+        th,td{width:150%; height:40px;}
+        th:nth-child(2){width:300px;}
+    </style>
+    
+</head>
+<body>
+    <h2>산술연산</h2>
+    <h2></h2>
+    <script>
+        function dataBtn(){
+
+            
+            var hdata="";
+            
+            for(let i=0;i<100;i++){
+                hdata += "<tr>";
+                hdata += "<>${i+1}1</th>";
+                hdata += "<th>번호</th>";
+                hdata += "<th>제목</th>";
+                hdata += "<th>작성자</th>";
+                hdata += "<th>작성일</th>";
+                hdata += "</tr>";
+            }
+            document.querySelector("#tbody").innerHTML = hdata;
+        }
+                
+        /*
+        <th>1</th>
+        <th>게시글이 없습니다.</th>
+        <th>관리자</th>
+        <th>2025-04-21</th>
+        */
+
+
+
+
+
+        /*
+        let a = "a";
+        let b = "b";
+        result = a+b;
+        document.write(result,"<br>")
+
+        let a = 10;     // typeof(a) >> number
+        let b = "10";   // typeof(b) >> string
+
+        result = a==b;  // 자바스크립트는 안의 데이터 값을 가지고 비교함
+        document.write(result);     // >> true
+
+        result2 = a===b;    // 데이터값과 타입까지 비교하려면 === 등호 > 3 <개
+        document.write(result2);    // >> false
+
+        let num1 = 15;
+        let num2 = 2;
+        let result = 0;
+        document.write("더하기 : ",result,"<br>");
+        result = 15 + 2;
+        document.write("더하기 : ",result,"<br>");
+        result = num1 - num2;
+        document.write("곱하기 : ",result,"<br>");
+        result = num1 * num2;
+        document.write("나누기 : ",result,"<br>");
+        result = num1 / num2;
+        */
+
+    </script>
+    
+    <h2>테이블</h2>
+    <table>
+        <thead>
+
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"> <!--document.querySelector("#tbody")-->
+            
+            <tr>
+                <th>1</th>
+                <th>게시글이 없습니다.</th>
+                <th>관리자</th>
+                <th>2025-04-21</th>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="dataBtn()">데이터 불러오기</button>
+    
+</body>
+</html>
