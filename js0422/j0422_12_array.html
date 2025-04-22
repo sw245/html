@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border:1px solid black; border-collapse:collapse; 
+            text-align:center;
+        }
+        th,td{
+            width:150px; height:40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>랜덤숫자 정답</h2>
+    <table>
+        <tr>
+            <th>정답</th>
+            <td id="answer">0</td>
+        </tr>
+    </table>
+    <h2>입력숫자</h2>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>입력값</th>
+        </tr>
+        <tbody id="tbody">
+        <tr>
+            <td>1</td>
+            <td id="input1"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td id="input2"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td id="input3"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td id="input4"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td id="input5"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <script>
+
+        let ran_num = parseInt(Math.random()*100)+1;
+        document.querySelector("#answer").innerText = ran_num;
+        let in_arr = [];
+
+        while(true){
+            let in_num = prompt("1부터 100까지의 숫자 중 하나를 입력하세요.");
+            if(in_num==ran_num){
+                in_arr.push(in_num);
+                alert("정답입니다.")
+                break;
+            }else if(0<in_num && in_num<=100 && in_num < ran_num){
+                in_arr.push(in_num);
+                alert("입력한 숫자가 작습니다.")
+            }else if(0<in_num && in_num<=100 && in_num > ran_num){
+                in_arr.push(in_num);
+                alert("입력한 숫자가 큽니다.")
+            }else{
+                alert("잘못된 입력입니다.")
+            }
+
+        }
+        
+        let in_html = ""
+        
+        for(i=0;i<in_arr.length;i++){
+            in_html += `<tr>`
+            in_html += `<td>${i+1}</td>`
+            in_html += `<td>${in_arr[i]}</td>`
+            in_html += `<tr>`
+        }
+        
+        document.querySelector("#tbody").innerHTML = in_html;
+            
+
+        /*
+
+        // 랜덤숫자 1개를 생성 (1-10)
+        // 5번 시도 후 크다/작다/맞다 출력 후
+        // 정답:
+        // 입력한 값 모두 출력 >> 배열에 추가 후 출력
+
+        let ran_num = parseInt(10*Math.random())+1;
+        let num_arr = [];
+
+        while(true){
+            let in_num = prompt("1부터 10까지의 숫자를 입력하세요.");
+            if(in_num == ran_num){
+                num_arr.push(in_num);
+                alert("정답입니다.");
+                break;
+            }else if(0<in_num && in_num<=10 && in_num < ran_num){
+                num_arr.push(in_num);
+                alert("입력값이 랜덤숫자보다 작습니다.");
+            }else if(0<in_num && in_num<=10 && in_num > ran_num){
+                num_arr.push(in_num);
+                alert("입력값이 랜덤숫자보다 큽니다.");
+            }else{
+                alert("잘못된 입력입니다.")
+            }
+        }
+
+        //document.write(`입력한 숫자 : ${num_arr}`,"<br>",`랜덤 숫자 : ${ran_num}`);
+        for(let i=0;i<num_arr.length;i++){
+            document.write(arr1[i],"<br>")
+        }
+                */
+
+        /*
+        // 배열 추가: push() - 뒤에 추가, unshift() - 앞에 추가, splice(2,0,'d') - 원하는 위치에 추가 (2번째 요소에 'd'를 추가)
+        // 배열 삭제: pop() - 뒤에 제거, shift() - 앞에 제거, splice(2,1) - 원하는 위치의 값을 제거 (2번째 요소 1개를 제거)
+        
+        let arr1 = [];
+        // 1-100 push
+        // 홀수만 입력
+        for(let i=0;i<100;i++){
+            if((i+1)%2==1){
+                arr1.push(i+1);
+            }
+        }
+
+        document.write("배열 길이 : ",arr1.length,"<br>")
+        for(let i=0;i<arr1.length;i++){
+
+            document.write(arr1[i],"<br>");
+        }
+
+        
+        //파이썬 - 리스트 : js - 배열
+        let arr1 = [1,2,3,4,5];
+        document.write(arr1[2],"<br>");
+
+        // 1,4,5 출력
+        document.write(arr1[0],"<br>")
+        document.write(arr1[3],"<br>")
+        document.write(arr1[4],"<br>")
+        */
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /*
+        function cbtn(){
+            let result = confirm("회원을 탈퇴하시겠습니까?")
+            if(result){     // true / false는 그 자체로 조건이 됨
+                document.write("회원 탈퇴가 완료되었습니다.")
+            }else{
+                alert("취소되었습니다.")
+
+        }
+        */
+
+
+
+        /*
+        // 점수를 입력받아, A-90,B-80,C-70,D-60이상,F-60미만 학점 출력
+        
+        let num = prompt("점수를 입력하세요.");
+        if(num>=90){
+            document.write("A학점");
+        }else if(num>=80){
+            document.write("B학점");
+        }else if(num>=70){
+            document.write("C학점");
+        }else if(num>=60){
+            document.write("D학점");
+        }else{
+            document.write("F학점");
+        }
+        */
+
+            
+
+        /*
+        let num = prompt("숫자를 입력하세요."); // prompt로 받는 데이터는 자체 형 변환도 가능
+        if(num%2==0){
+            document.write("입력한 숫자는 짝수입니다.");
+        }else{
+            document.write("입력한 숫자는 홀수입니다.");
+        }
+        */
+
+        //
+        let num = prompt("해당 월을 입력하세요.");
+        if(num>=3 && num<=5){
+            document.write("봄입니다.");
+        }else if(num>=6 && num<=8){
+            document.write("여름입니다.");
+        }else if(num>=9 && num<=11) document.write("가을입니다.");
+        else if(num==12 || num==1 || num==2) document.write("겨울입니다.");
+        else document.write("잘못된 입력입니다."); // 한 줄일 때는 {}중괄호 생략가능
+        
+
+
+    </script>
+</head>
+<body>
+    <!--
+    <div>회원을 탈퇴하시면 재가입이 불가합니다.</div>
+    <button type="button" onclick="cbtn()">회원 탈퇴</button>
+    -->    
+
+</body>
+</html>

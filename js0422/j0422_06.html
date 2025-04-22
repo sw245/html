@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        /*
+        let i = 1;
+        
+        do{
+            i = prompt("프로그램 종료(1.예, 0.아니오)");
+            alert(i);
+        }while(i==0)
+        
+        
+        while(i==0){    // 조건이 맞을 때 실행됨
+            i = prompt("프로그램 종료(1.예, 0.아니오)")
+        }
+
+        document.write("the end");
+        */
+
+        /*
+        // if문의 시간 문제(전부 다 비교함) 해결?? >> switch문
+        switch(input){          // == 조건에 한해 swtich문 사용 가능, 한 번에 모두 비교함
+            case "네이버":
+                document.write("네이버를 선택했습니다.")
+                break;
+            case "다음":
+                document.write("다음을 선택했습니다.")
+                break;
+            case "네이트":
+                document.write("네이트를 선택했습니다.")
+                break;
+            case "구글":
+                document.write("구글을 선택했습니다.")
+                break;
+        }
+        */
+
+        /*
+        let input = prompt("네이버, 다음, 네이트, 구글 중 검색포털을 선택하세요.")
+        if(input=="네이버"){        
+        document.write("네이버를 선택함")
+    }else if(input=="다음"){
+        document.write("다음을 선택함")
+    }else if(input=="네이트"){
+        document.write("네이트를 선택함")
+    }else if(input=="구글"){
+        document.write("구글을 선택함")
+    }else document.write("잘못된 입력입니다.")
+    */
+
+    
+    
+    </script>
+    <style>
+        h2{text-align:center;}
+        table,th,td{
+            border:1px solid black; border-collapse:collapse;
+            text-align:center;
+        }
+        table{margin:0 auto;}
+        th{background:#eee;}
+        th,td{width:200px; height:40px;}
+    </style>
+</head>
+<body>
+    <h2>게시판</h2>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+        </tr>
+        <tbody id="tbody">
+            
+        
+        </tbody>
+        <script>
+            let data = "";
+
+            for(let i=0;i<100;i++){
+                // data += "<tr><td>"+(i+1)+"</td><td>이벤트 신청</td><td>관리자</td><td>2025-04-22</td></tr>"; 
+                data += `<tr><td>${i+1}</td><td>이벤트 신청</td><td>관리자</td><td>2025-04-22</td></tr>`;   // ` << 물결표시 다운키 
+
+                
+            }
+
+            document.querySelector("#tbody").innerHTML=data;
+        </script>
+    </table>
+</body>
+</html>

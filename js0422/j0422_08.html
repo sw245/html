@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+    
+    
+    </script>
+    <style>
+        h2{text-align:center;}
+        table,th,td{
+            border:1px solid black; border-collapse:collapse;
+            text-align:center;
+        }
+        table{margin:0 auto;}
+        th{background:#eee;}
+        th,td{width:200px; height:40px;}
+    </style>
+</head>
+<body>
+    <h2>게시판</h2>
+    <table>
+        <tr>
+            <th>단</th>
+            <th>*</th>
+            <th>숫자</th>
+            <th>=</th>
+            <th>결과</th>
+        </tr>
+        <tbody id="tbody">
+                
+                
+        </tbody>
+    </table>
+    <script>
+
+        /*
+        for(let i=2;i<=9;i++){
+            document.write(`[ ${i} 단 ]<br>`);
+            for(let j=1;j<=9;j++){
+                // document.write(2)
+                document.write(`${i} * ${j} = ${i*j} <br>`)
+            }//for j
+        }// for i
+        */
+
+        let data = "";
+
+        for(let i=2;i<=9;i++){
+            for(let j=1;j<=9;j++){
+                data += `<tr>`;
+                data += `<td>${i}</td>`;
+                data += `<td>*</td>`;
+                data += `<td>${j}</td>`;
+                data += `<td>=</td>`;
+                data += `<td>${i*j}</td>`;
+                data += `</tr>`;
+            }
+        }
+        document.querySelector("#tbody").innerHTML = data;
+        
+    </script>
+</body>
+</html>

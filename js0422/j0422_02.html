@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        div{
+            border:1px solid black; width:200px;
+            height:40px; text-align:center;
+        }
+    </style>
+    <script>
+
+        /*
+        // 함수 선언
+        let num = 0;    // 전역변수
+        function cbtn(){
+            // 함수 정의 안에서 변수 선언하면 지역변수로 쓰임
+            //alert("확인");
+            // num += 1;   // 복합 대입연산자
+            num++;       // 증감연산자
+            document.querySelector("#cal").innerText = num;
+        }
+
+        function cbtn2(){
+            num -= 1;
+            document.querySelector("#cal").innerText = num;
+        }
+            */
+
+        function cbtn(){
+            // alert("이벤트 당첨");
+            // 남자, 25세 이상이면 당첨................ㅎ믐
+            let gender = document.querySelector("#gender").value;
+            let age = Number(document.querySelector("#age").value);
+            if (gender=="남성" && age>=25){
+                alert("당첨입니다.")
+            }else{
+                alert("당첨되지 않았습니다.")
+            }
+        }//cbtn
+
+        function checkBtn(){
+            let age = Number(document.querySelector("#age").value);
+            var  resultTxt = age<25?"이벤트 신청 불가":"이벤트 신청가능"    // 삼항식 ??
+            document.querySelector("#txt").style.color = "red";
+            document.querySelector("#txt").innerText = resultTxt;
+        }//checkBtn
+    
+    </script>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <label>나이</label>
+    <input type="text" name="age" id="age" on><br>
+    <span id="txt">나이를 정확히 입력하세요.</span><br>
+    <label>성별</label>
+    <input type="text" name="gender" id="gender" onfocus="checkBtn()"><br>
+    <button type="button" onclick="cbtn()">이벤트신청</button>
+    <button type="button" onclick="cbtn2()">감소하기</button>
+    <div id="cal">0</div>
+</body>
+</html>

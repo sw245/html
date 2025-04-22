@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+    
+    
+    </script>
+    <style>
+        h2{text-align:center;}
+        table,th,td{
+            border:1px solid black; border-collapse:collapse;
+            text-align:center;
+        }
+        table{margin:0 auto;}
+        th{background:#eee;}
+        th,td{width:200px; height:40px;}
+    </style>
+</head>
+<body>
+    <h2>구구단</h2>
+    <table>
+        <tr>
+            <th>단</th>
+            <th>*</th>
+            <th>숫자</th>
+            <th>=</th>
+            <th>결과</th>
+        </tr>
+        <tbody id="tbody">
+            <tr>
+                <td>2</td>
+                <td>*</td>
+                <td>1</td>
+                <td>=</td>
+                <td>2</td>
+            </tr>   
+        </tbody>
+    </table>
+    <script>
+        let hdata = "";
+        for(let i=2;i<=9;i++){
+            for(let j=1;j<=9;j++){
+                hdata += `<tr>`;
+                hdata += `<td>${i}</td>`;
+                hdata += `<td>*</td>`;
+                hdata += `<td>${j}</td>`;
+                hdata += `<td>=</td>`;
+                hdata += `<td>${i*j}</td>`;
+                hdata += `</tr>`;
+            }
+            console.log(`${i}:`,hdata);
+        }
+        document.querySelector("#tbody").innerHTML=hdata;
+    </script>
+</body>
+</html>

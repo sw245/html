@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function cbtn(){
+            let num = Number(document.querySelector("#c1").value);
+            if(num<500){
+                document.write("500보다 작은 수입니다.");
+            }else{
+                document.write("500과 같거나 큰 수입니다.");
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="c1">
+    <button type="button" onclick="cbtn()">확인</button>
+</body>
+</html>

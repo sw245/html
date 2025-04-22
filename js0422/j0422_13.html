@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border:1px solid black; border-collapse:collapse; 
+            text-align:center;
+        }
+        th,td{
+            width:150px; height:40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>랜덤숫자</h2>
+    <table>
+        <tr>
+            <th>번호</th>
+            <td>랜덤숫자</td>
+        </tr>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    
+    <script>
+        // 1-10까지 랜덤숫자 6개 출력, <<중복 없이>>
+        // arr1[] 에 6개 넣어 출력.
+
+        let arr1 = [];
+        
+        while(arr1.length<6){
+            let ran_num = parseInt(Math.random()*10)+1;
+            for(i=0;i<arr1.length;i++){
+                if(ran_num == arr1[i]){
+                    continue; 
+                }else{
+                    arr1.push(ran_num);
+                }
+            }
+        }
+
+        console.log(arr1);
+        /*
+        let data = ``
+        for(i=0;i<arr1.length;i++){
+            data += `<tr>`
+            data += `<th>${i+1}</th>`
+            data += `<td>${arr1[i]}</td>`
+            data += `</tr>`
+        }
+                */
+    </script>
+</body>
+</html>

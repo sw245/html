@@ -38,8 +38,8 @@
     <script>
         function calBtn(){
             alert("계산하기 실행");
-            // <input>으로 받은 데이터는 전부 string은 아닌 듯
-            let height = document.querySelector("#height").value;       // value에 값을 넣으려면 뒤에 = 으로 값 대입
+            //
+            let height = Number(document.querySelector("#height").value);       // value에 값을 넣으려면 뒤에 = 으로 값 대입
             let weight = Number(document.querySelector("#weight").value);
             let hm = height / 100
             // console.log(document.querySelector("#bmi").innerText);    // innerText도 동일

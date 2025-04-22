@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    /*
+    alert(), prompt(), confirm
+    console.log(), document.write()
+    변수선언: var, let, const : 상수
+    document.getElementById(), getElementsByClassName(), querySelector()
+    */
+
+    //? let cbtn = document.querySelector("#txt");
+    //? cbtn.onclick = cal;
+
+    
+    function cal(){
+        
+        let a = Number(document.querySelector("#a1").value);
+        let b = Number(document.querySelector("#a2").value);
+        let c = Number(document.querySelector("#a3").value);
+        
+        let result = a>b?(a>c?a:c):(b>c?b:c);
+        alert("최댓값 찾기 "+ result);
+        document.querySelector("#a1").value=""
+        document.querySelector("#a2").value=""
+        document.querySelector("#a3").value=""
+    }
+
+</script>
+<body>
+    <label>비교할 숫자를 입력하세요.</label><br>
+    <input type="text" id="a1"><br>
+    <input type="text" id="a2"><br>
+    <input type="text" id="a3"><br>
+    <button type="button" id="cal" onclick="cal()">최댓값 검색</button>
+</body>
+</html>
