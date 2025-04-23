@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <script>
+        let hdata = [
+            {"area":"서울","name":"홍","kor":90},
+            {"area":"부산","name":"유","kor":89},
+            {"area":"대구","name":"이","kor":91},
+            {"area":"대전","name":"강","kor":92},
+            {"area":"인천","name":"김","kor":88},
+            {"area":"광주","name":"신","kor":95},
+        ];
+
+        // map: 반복적으로 실행하는 구문? >> 특정 배열(hdata)을 가져와서 각각의 요소(h) 하나하나에 실행. 
+        let arr = $.map(hdata,function(h){
+            
+            h.kor += 10;
+            return h;
+            
+            
+            /*
+            if(h.area=="서울"){
+                return h;
+            }
+            */
+
+        });
+        
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

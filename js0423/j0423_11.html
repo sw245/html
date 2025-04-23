@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 최신버전 사용 -->
+    <!-- <script  src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"></script>
+    <title>Document</title>
+    <style>
+        button{font-size:15px;}
+    </style>
+
+    <script>
+        //제이쿼리 선언
+        $(function(){
+            let num = 1;
+            $("#next").click(function(){
+                num++;
+                if(num>6) num=1;
+                $("#img").attr("src",`images/best0${num}.jpg`)  
+                //$("#img").attr("src",`images/best0${num==6?num=6:++num}.jpg`)  // 나의 발상
+                console.log(num);
+            });
+
+            $("#prev").click(function(){
+                //if (num > 1) num--;     // chatgpt 추천
+                num--;
+                if (num<1) num=6;
+                console.log(num);
+                $("#img").attr('src',`images/best0${num}.jpg`)
+            });
+
+            
+        });
+        
+    </script>
+</head>
+<body>
+    <div>
+        <img id="img" src="images/best01.jpg">
+    </div>
+    <button id="prev">앞으로</button>
+    <button id="next">뒤로</button>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<script>
+    //제이쿼리 선언
+    $(function(){
+        let click = 0;
+        /*
+        $("h2").click(function(){
+            // 부모요소 호출
+            console.log("부모요소 : ",$("h2").parents()[1]);     // 모든 부모요소 중 [1]번째 요소
+            console.log("부모요소 : ",$("h2").parent());         // 바로 위의 부모
+            console.log("이전요소 : ",$("h2").prev());           // 이전 요소 호출
+            console.log("다음요소 : ",$("h2").next());           // 다음 요소 호출
+            console.log("상위 요소 중 가까운 요소 : ",$("h2").closest("span"));           //선택한 요소("h2")의 상위 요소("span") 중 가까운 요소 호출
+            */
+
+            /*
+            if (click==0){
+                $($("h2").prev()).css("color","red");
+                click++;
+            }else if (click==1){
+                $($("h2").next()).css("color","blue");
+                click++;
+            };
+        });
+        */
+
+        /*
+        $("p").click(function(){
+            // console.log("데이터값 : ",$(this).text());      //this >> 조건에 맞는 요소를 선택하는 키워드?
+            console.log($("p").siblings());     // 모든 형제요소 검색
+        });
+        */
+        
+        $("#inner_wrap").click(function(){
+            console.log($("#inner_wrap").children());
+        })
+
+
+    }); //jquery
+</script>
+<body>
+    <span>bbb
+
+        <div id="wrap">
+    
+            <div id="inner_wrap">
+                <h1>제목1</h1>
+                <h2>제목2</h2>
+                <p>내용1</p>
+                <p>내용2</p>
+                <p>내용3</p>
+            </div>
+        </div>
+    </span>
+
+    <script>
+        
+        /*
+        let num = 0;
+        while(num<10){
+            document.write(num,"<br>");
+            num++;
+        }
+
+        document.write(num,"<br>");
+        */
+
+    </script>
+</body>
+</html>

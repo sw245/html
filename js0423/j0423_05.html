@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock{
+            border:1px solid black; margin:20px auto;
+            width:600px; height:200px; text-align:center;
+            line-height:200px; font-size:40px;
+        }
+        #bu{display:flex; justify-content: center;}
+        button{
+            width:150px; height:40px; text-align:center;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">2025-04-23 11:41:25</div>
+    <div id="bu">
+        <button id="start">시간 진행</button>
+        <button id="stop">시간 정지(?)</button>
+    </div>
+    <script>
+        getClock();     // 페이지 로드 시 바로 실행
+        // setInterval - 일정한 시간마다 함수 호출, 실행
+
+        function start(){
+            timer = setInterval(getClock,1000); // 함수호출, 1초마다(1000밀리초)
+        }
+        document.querySelector("#start").onclick = start;
+
+        function stop(){
+            clearInterval(timer);
+        }
+        document.querySelector("#stop").onclick = stop;
+
+        function getClock(){
+            let today = new Date();
+            let month = today.getMonth()+1;
+            let date = today.getDate();
+            let hours = today.getHours();
+            let minutes = today.getMinutes();
+            let seconds = today.getSeconds();
+            time = `${today.getFullYear()}-${month<10?"0"+month:month}-${date<10?"0"+date:date} \
+            ${hours<10?"0"+hours:hours}:${minutes<10?"0"+minutes:minutes}:${seconds<10?"0"+seconds:seconds}`;
+            document.querySelector("#clock").innerText = time;
+        }
+
+    </script>
+</body>
+</html>

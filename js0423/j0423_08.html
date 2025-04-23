@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0}
+        div{width:800px; height:2000px; border:5px solid black;}
+        #txt{
+            position:fixed; right:800px; top:700px;
+            border:1px solid black; border-radius:50%;
+            width:50px; height:50px; display:inline-block;
+            text-align:center; line-height:50px;
+            background:cornsilk; cursor:pointer;
+        }    
+        #d01{background:yellow;}    
+        #d02{background:pink;}    
+    </style>
+</head>
+<body>
+    <!-- <button id="btn">버튼</button> -->
+    <div id="d01"></div>
+    <div id="d02"></div>
+    <div>
+        <span id="txt">top▲</span>
+    </div>
+    <script>
+        function txtBtn(){
+            //alert("확인");
+            windows.scrollTo(
+                {top:0,left:0,behavior:'smooth'}
+            );
+        };
+        document.querySelector("#txt").onclick = txtBtn;
+    </script>
+</body>
+</html>

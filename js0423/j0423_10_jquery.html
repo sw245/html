@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 최신버전 사용 -->
+    <!-- <script  src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+<script>
+    /*
+    //jQuery 선언문
+    $(document).ready(function(){
+        document.querySelector("#d01").innerText = 500;
+    });
+    */
+
+    /*
+    //jQuery 약식 선언문
+    $(function(){
+        //document.querySelector("#d01").innerText = 500;
+
+        // text() 안에 글자 입력 : .innerText = 과 같음
+        // <input>으로 받은 값 => val()
+        $("#d01").text(1500);
+
+
+    });
+    */
+
+    //jQuery 선언
+    
+    $(function(){
+        // 클릭 명령어 - click, dbclick // change, scroll, focusin, focusout 등의 명령어가 있음
+        $("#cbtn").click(function(){
+            let kor = Number($("#kor").val());
+            let eng = Number($(".eng").val());
+            $("#d01").text(kor+eng);        // html 글자 변경
+            $("#d01").css("color","red");   // css 속성변경
+            $("#d01").css("font-size","30px")
+            $("#d01").css("border","2px solid green")
+
+
+        });
+
+        // 이미지 변경
+
+        $("#chgImg").click(function(){
+            $("#img").attr('src','images/best02.jpg');
+        });
+    });
+    
+    /*
+    function cal(){
+        let kor = Number($("#kor").val());
+        let eng = Number($(".eng").val());
+        $("#d01").text(kor+eng);
+    }
+    */  
+    
+</script>
+<body>
+    <label>국어</label>
+    <input type="text" id="kor" value="10"><br>
+    <label>영어</label>
+    <input type="text" class="eng" value="20"><br>
+
+    <div id="d01">0</div>
+    <img id="img" src="images/best01.jpg"><br>
+    <button id="cbtn">계산하기</button>
+    <button id="chgImg">이미지 변경</button>
+    <script>
+        
+       // document.querySelector("#cbtn").onclick=cal;
+    </script>
+</body>
+
+</html>

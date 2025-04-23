@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+</head>
+<script>
+    /*
+    function add(num1,num2){    // 함수명(매개변수1,매개변수2,a=10) a=10 >> 키워드 매개변수
+    let sum = 0;
+    sum = num1 + num2;
+    return sum;
+    }
+
+    let number = add(1,2);
+    console.log("합계 : ",number);
+    */
+
+
+    //함수 선언
+    function cbtn(a,b){
+        //alert("더하기")
+        let add = a + b;
+        document.querySelector("#d01").innerText = add;
+    }
+
+    // 화살표 함수
+    let ccbtn = () => {
+
+    }
+
+
+</script>
+<body>
+    <div id="d01">0</div>
+    <button onclick="cbtn(10,20)">더하기</button>
+</body>
+</html>

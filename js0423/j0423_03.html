@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{text-align:center;}
+        table,th,td{
+            text-align:center; border-collapse:collapse;
+            border:1px solid black;
+        }
+        table{margin:0 auto;}
+        th,td{width:120px; height:40px;}
+        th{background:#eee;}
+        button{
+            margin:10px auto; display:block; height:40px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h2>학생성적 프로그램</h2>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>합계</th>
+            <th>평균</th>
+            <th>등수</th>
+        </tr>
+        <tbody id="tbody">
+            
+        </tbody>
+    </table>
+    <button type="button" id="dataOpen">데이터 불러오기</button>
+    <script>
+        // onclick="cbtn()" >> 인라인 방식은 유지보수가 어려워서 잘 안 씀
+        let stuBtn = document.querySelector("#dataOpen");
+        stuBtn.onclick = cbtn;
+        let stuData = [
+            {'no':1,'name':'홍','kor':99,'eng':100,'math':100},
+            {'no':2,'name':'유','kor':100,'eng':99,'math':100},
+            {'no':3,'name':'이','kor':100,'eng':100,'math':99},
+        ];
+
+        /*
+        function def_stuVar(i,x){
+            let x = stuData[i].x;
+        }
+        */
+
+        function cbtn(){
+            alert("데이터 불러오기");    
+            let hdata = ``;     // 변수값 ${}을 넣을 수 있음 >> ``
+            for(i=0;i<3;i++){
+                /*
+                let name = prompt("이름을 입력하세요.");
+                let kor = Number(prompt("국어점수를 입력하세요."));
+                let eng = Number(prompt("영어점수를 입력하세요."));
+                let math = Number(prompt("수학점수를 입력하세요."));
+                */
+
+
+                let name = stuData[i].name;
+                let kor = stuData[i].kor;
+                let eng = stuData[i].eng;
+                let math = stuData[i].math;
+                let avg = (kor+eng+math)/3
+
+                hdata += `<tr>`;
+                hdata += `<td>${i+1}</td>`;
+                hdata += `<td>${name}</td>`;
+                hdata += `<td>${kor}</td>`;
+                hdata += `<td>${eng}</td>`;
+                hdata += `<td>${math}</td>`;
+                hdata += `<td>${kor+eng+math}</td>`;
+                hdata += `<td>${avg.toFixed(2)}</td>`;      // 소수점 둘째 자리까지 표시
+                hdata += `<td>0</td>`;
+                hdata += `<tr>`;
+            }
+
+            document.querySelector("#tbody").innerHTML= hdata ;
+        }
+        
+    </script>
+</body>
+</html>

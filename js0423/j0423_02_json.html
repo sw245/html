@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let stu = [1,2,3];      // stu[0] == 1
+        
+        // JSON 형태?
+        let stuData = [
+            {'no':1,'name':'홍','kor':99,'eng':100,'math':100},
+            {'no':2,'name':'유','kor':100,'eng':99,'math':100},
+            {'no':3,'name':'이','kor':100,'eng':100,'math':99},
+        ];
+
+        
+        document.write(stuData[0],"<br>");      // 딕셔너리 전체 출력 불가??
+        document.write(stuData[0].no,"<br>");
+        document.write(stuData[1].name,"<br>");
+        document.write(stuData[2].math,"<br>");
+
+        
+    </script>
+</body>
+</html>

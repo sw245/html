@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0}
+        div{width:2000px; height:3000px; border:5px solid black;}
+        span{
+            display:inline-block; width:200px; height:100px;
+            text-align:center; font-size:30px;
+            border:1px solid black; line-height:100px;
+        }
+        
+        #txt1{
+            position:fixed; left:0px; top:0px;
+        }
+        #txt2{
+            position:fixed; left:210px; top:0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- <button id="btn">버튼</button> -->
+    <div>
+        <span id="txt1">0</span>
+        <span id="txt2">0</span>
+    </div>
+    <script>
+        //innerHeight : 브라우저 창 높이 / innerWidth : 브라우저 창 너비
+        window.addEventListener("resize",(event)=>{
+            console.log(this.innerHeight);
+            console.log(this.innerWidth);
+            document.querySelector("#txt1").innerText = this.innerHeight;
+            document.querySelector("#txt2").innerText = this.innerWidth;
+            
+        });
+    </script>
+</body>
+</html>

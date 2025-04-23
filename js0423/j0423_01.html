@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체 선언
+        /*
+        let arr = new Array();
+        let arr1 = [];
+        
+        arr1 = [1,2,"안녕",true];
+        */
+
+        /* 배열 추가 
+        let arr = [1,2,3];
+        document.write(arr.length,"<br>");     // 배열 길이
+        arr.push(4);                           // **배열에 추가 - 가장 뒤에
+        arr.unshift(10);                       // 배열에 추가 - 가장 앞에       >> 잘 안 씀??
+        arr.splice(2,0,20);                    // 배열에 추가/제거 - 자리 지정(2번째 항목에 20 추가)   >> 잘 안 씀??
+        document.write(arr);
+        */
+
+        /* 배열 삭제 
+        let arr = [1,2,3,4,5];
+        arr.pop();                          // **배열 요소 삭제 - 가장 뒤에
+        arr.shift();                        // 배열 요소 삭제 - 가장 앞에
+        arr.splice(1,2);                    // 배열 요소 삭제 - 자리 지정(1번째 포함해서 뒤로 2개 삭제)
+        document.write(arr,"<br>");
+        */
+
+        let strArr = ['사과','안녕','잘가','그래','바나나','응','나도']
+        let arr = [10,8,2,3,1,5,20,50,15,7];
+        /*
+        arr.sort();                 //  첫째 자리 수만 비교해서 순차정렬
+        arr.sort((a,b)=>a-b);       //  모든 숫자 비교, 순차정렬 >> a-b가 양수이면 자리를 바꿈 ??
+        arr.sort((a,b)=>b-a);       //  모든 숫자 비교, 역순정렬 >> b-a가 양수이면 자리를 바꿈 ??
+        arr.reverse();              //  현재 순서를 거꾸로 정렬해
+        strArr.sort();
+        document.write(arr[arr.length-1],"<br>");       // 리스트의 가장 뒤 요소 찾기
+        */
+        let txt = arr.join("-");    // 배열을 특정 연결문자로 연결해 문자열로 반환
+        document.write(txt,typeof(txt),"<br>");
+        document.write(arr,"<br>");
+        document.write(strArr,"<br>");
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        div{width:300px; height:50px; border:1px solid black;}
+    </style>
+    <script>
+        // 제이쿼리 선언
+        $(function(){
+            //버튼 클릭 시 함수 실행
+            $("#abtn").click(function(){
+                /*
+                //alert("확인")
+                console.log("체크박스 : ",$("input[name=agree]").length)         
+                console.log("체크박스 : ",$("input[name=agree]:checked").length);
+                */
+
+                //console.log($("input:checked"))
+
+                
+                if($("input:checked").length != 3){
+                    alert("모두 동의해야 가입이 가능합니다.");
+                    if (confirm("모두 동의하시겠습니까?")){
+                        // 배열로 가져옴
+                        // jquery: each 반복문, js: foreach 반복문
+                        $("input[name=agree]").each(function(){
+                            // this >> each가 적용된 것? / $(this) == $("input[name=agree]")??
+                            this.checked=true;
+                        });
+                    };
+                };
+                
+
+            });//#abtn
+        });// jQuery
+    </script>
+</head>
+<body>
+    <div>이용약관 동의합니다.</div>
+    <input type="checkbox" name="agree" value="1" id="agree1">
+    <label for="agree1">동의</label><br>
+    <div>개인정보처리방침 동의합니다.</div>
+    <input type="checkbox" name="agree" value="1" id="agree2">
+    <label for="agree2">동의</label><br>
+    <div>마케팅 알림 동의합니다.</div>
+    <input type="checkbox" name="agree" value="1" id="agree3">
+    <label for="agree3">동의</label><br>
+    <button id="abtn">가입하기</button>
+</body>
+
+</html>
