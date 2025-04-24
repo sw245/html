@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시판</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/notice_list.css">
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $(function(){
+      let no = 1
+      $("#cbtn").click(function(){
+        let hdata = ``;
+        hdata += `<tr><td>${no}</td>`;
+        hdata += `<td>${$("#txtbox").val()}</td>`;
+        hdata += `<td>2025-04-24</td>`;
+        hdata += `<td>2</td></tr>`;
+        $('#tbody').append(hdata);
+        no++;
+
+      })
+
+    });
+  </script>
+</head>
+<body>
+<section>
+    <h1>NOTICE</h1>
+    <div class="wrapper">
+      <form action="/search" name="search" method="post">
+        
+
+        <div class="title">
+          <input type="text" id="txtbox" size="16">
+        </div>
+  
+        <button type="button" id="cbtn">게시글 저장</button>
+      </form>
+    </div>
+
+    <table>
+      <colgroup>
+        <col width="18%">
+        <col width="50%">
+        <col width="18%">
+        <col width="10%">
+      </colgroup>
+      <!-- 제목부분 -->
+      <tr>
+        <th>No.</th>
+        <th>제목</th>
+        <th>작성일</th>
+        <th>조회수</th>
+      </tr>
+      <!-- 내용부분 -->
+      <tbody id="tbody">
+
+        
+      </tbody>
+          
+    </table>
+
+    <ul class="page-num">
+      <li class="first"></li>
+      <li class="prev"></li>
+      <li class="num"><div>1</div></li>
+      <li class="next"></li>
+      <li class="last"></li>
+    </ul>
+
+    <a href="write_view.jsp"><div class="write">쓰기</div></a>
+  </section>
+
+</body>
+</html>

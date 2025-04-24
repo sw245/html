@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>DDDDocument</title>
+    <style>
+        *{margin:0; padding: 0;}
+        #container{width:1200px; margin:30px auto; text-align: center;}
+        h2{font-size: 40px; margin-bottom:40px;}
+        table{width:1200px; margin:0 auto;}
+        table,th,td{border:1px solid black; border-collapse: collapse;}
+        th{height: 60px; background: #eee;}
+        td{height:50px;}
+        button{width:100px; height:35px;}
+        input:focus {
+           outline: none; border:1px solid red;
+        }
+        input{margin-bottom:5px;}
+        #input{margin-bottom: 30px;}
+        #input div{font-size: 30px; margin-bottom: 10px;}
+        #input input{width:500px; height:32px; padding-left: 20px;}
+    </style>
+    <script>
+        //alert("no : "+no);      // ?? 일반변수는 +로 연결해야 제대로 보임?? > alert
+        
+        //전역변수 
+        let hdata = ``
+        let no = 1;
+        let flag = 0;
+        let boardNo = 0;        // 수정, 삭제 시 게시글의 위치 찾기에 사용
+        let today = new Date();
+        
+
+        $(function(){
+            
+            boardList();
+
+            // 저장버튼 이벤트
+            $(document).on("click","#save",function(){
+                if(flag == 0){      // 게시글 저장버튼클릭
+                    alert("저장버튼 출력");
+                    boardPrepend();
+
+                }else if(flag == 1){
+                    alert("수정저장버튼 출력");
+
+                    let title = $("#title").val();
+                    let name = $("#name").val();
+
+                    hdata = ``;
+                    hdata += `<td>${boardNo}</td>`;   
+                    hdata += `<td class="title">${title}</td>`;
+                    hdata += `<td>${name}</td>`;
+                    hdata += `<td>${today.getFullYear()}-${(today.getMonth()+1)<10?"0"+(today.getMonth()+1):today.getMonth()+1}-${today.getDate()<10?"0"+today.getDate():today.getDate()}</td>`;
+                    hdata += `<td>1</td>`;
+                    hdata += `<td><button type="button" id="mod">수정</button>`;
+                    hdata += `<button type="button" id="del">삭제</button></td>`;
+
+                    $(`#${boardNo}`).html(hdata);
+
+
+                    $("#title").val("");
+                    $("name").val("");
+                    $("#save").text("게시글 저장");
+
+                    flag = 0;
+                }
+
+            });//#save
+
+            // 삭제버튼 이벤트
+            $(document).on("click","#del",function(){
+                //alert("삭제버튼 클릭");
+                //console.log($(this).closest("tr").attr("id"));
+                boardNo = $(this).closest("tr").attr("id");
+                if(confirm('게시글을 삭제하시겠습니까?')){
+                    $(`#${$(this).closest("tr").attr("id")}`).remove();
+                }
+
+            });//#del
+
+            // 수정버튼 이벤트
+            $(document).on("click","#mod",function(){
+                //alert("수정버튼 클릭");
+                //console.log($(this).closest("tr").attr("id"));
+                boardNo = $(this).closest("tr").attr("id");
+
+                //수정버튼 클릭 시 수정저장 이름 변경 및 다른 함수 출력
+                $("#save").text("수정 저장");
+                $("#title").val($(this).closest("tr").children()[1].innerText); 
+                $("#name").val($(this).closest("tr").children()[2].innerText);
+                
+                flag = 1;
+
+            });//#mod
+            
+        });//jQuery
+
+        // 게시글 1개 추가함수
+        function boardPrepend(){
+            let title = $("#title").val();
+            let name = $("#name").val();
+
+            hdata = ``;
+            hdata += `<tr id="${no}"><td>${no}</td>`;
+            hdata += `<td class="title">${title}</td>`;
+            hdata += `<td>${name}</td>`;
+            hdata += `<td>${today.getFullYear()}-${(today.getMonth()+1)<10?"0"+(today.getMonth()+1):today.getMonth()+1}-${today.getDate()<10?"0"+today.getDate():today.getDate()}</td>`;
+            hdata += `<td>1</td>`;
+            hdata += `<td><button type="button" id="mod">수정</button>`;
+            hdata += `<button type="button" id="del">삭제</button></td></tr>`;
+            no++;
+
+            $("#tbody").prepend(hdata);
+
+            //초기화
+            title = ""
+            name = ""
+
+        }
+
+        // 게시글 5개 리스트 출력
+        function boardList(){
+            for(let i=0;i<5;i++){
+                hdata += `<tr id="${i+1}"><td>${i+1}</td>`;
+                hdata += `<td class="title">이벤트 신청 ${i+1}</td>`;
+                hdata += `<td>관리자</td>`;
+                hdata += `<td>2025-04-24</td>`;
+                hdata += `<td>1</td>`;
+                hdata += `<td><button type="button" id="mod">수정</button>`;
+                hdata += `<button type="button" id="del">삭제</button></td></tr>`;
+                no++;
+                $("#tbody").html(hdata);
+            }
+        }//boardList
+
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h2>게시판</h2>
+        <div id="input">
+            <div>글을 입력하세요.</div>
+            <input type="text" name="title" id="title" placeholder="제목을 입력하세요.">
+            <input type="text" name="title" id="name" placeholder="작성자를 입력하세요.">
+            <button type="button" id="save">게시글 저장</button>
+        </div>
+
+        <table>
+            <colgroup>
+              <col width="10%">
+              <col width="*">
+              <col width="12%">
+              <col width="12%">
+              <col width="12%">
+              <col width="20%">
+            </colgroup>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+                <th>기타</th>
+            </tr>
+            <tbody id="tbody">
+                <tr id="1">
+                    <td>1</td>
+                    <td class="title">이벤트 신청</td>
+                    <td>관리자</td>
+                    <td>2025-04-24</td>
+                    <td>1</td>
+                    <td>
+                        <button type="button" id="mod">수정</button>
+                        <button type="button" id="del">삭제</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

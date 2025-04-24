@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            border:1px solid black; width:200px; height:100px;
+            text-align:center; transition:1s;
+        }
+        .on{background:yellow; border:3px solid pink; font-size:50px;}
+        .off{background:none;}
+    </style>
+    <script>
+        $(function(){
+            $("#cbtn").click(function(){
+                //$(".d01").addClass("on");       //class이름에 추가
+                $(".d01").toggleClass("on");    //class이름에 없으면 추가, 있으면 삭제
+                // $(".d01").css({"background":"yellow","border":""})  // 이렇게 대신 토글로도 가능
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="d01">확인</div>
+    <div class="d02">확인2</div>
+    <button id="cbtn">변경</button>
+</body>
+</html>

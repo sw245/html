@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>DDocument</title>
+    <style>
+        *{margin:0; padding: 0;}
+        #container{width:1200px; margin:30px auto; text-align: center;}
+        h2{font-size: 40px; margin-bottom:40px;}
+        table{width:1200px; margin:0 auto;}
+        table,th,td{border:1px solid black; border-collapse: collapse;}
+        th{height: 60px; background: #eee;}
+        td{height:50px;}
+        button{width:100px; height:35px;}
+        input:focus {
+           outline: none; border:1px solid red;
+        }
+        input{margin-bottom:5px;}
+        #input{margin-bottom: 30px;}
+        #input div{font-size: 30px; margin-bottom: 10px;}
+        #input input{width:500px; height:32px; padding-left: 20px;}
+    </style>
+    <script>
+        $(function(){
+            
+            let hdata = ``;
+            let no = 1;
+            let suFlag = 0;  //0:save, 1:updateSave
+            let updateNum = 0;
+            
+            for(let i=0;i<5;i++){
+                hdata += `<tr id="${i+1}"><td>${i+1}</td>`;
+                hdata += `<td class="title">이벤트 신청</td>`;
+                hdata += `<td class="name">관리자</td>`;
+                hdata += `<td>2025-04-24</td>`;
+                hdata += `<td>1</td>`;
+                hdata += `<td><button type="button" class="updateBtn">수정</button>`;
+                hdata += `<button type="button" class="deleteBtn">삭제</button></td></tr>`;
+                    
+                $("#tbody").html(hdata);
+                no++
+            }//for
+                    
+                    
+            //save버튼 클릭 : 동적 이벤트로 변경
+            
+            $(document).on("click","#save",function(){
+                if(suFlag == 0){    // 게시글 추가
+
+                    //console.log("제목 : ",$("#title").val());
+                    //console.log("작성자 : ",$("#name").val());
+                    hdata = ``
+                    hdata += `<tr id="${no}"><td>${no}</td>`;
+                    hdata += `<td class="title">${$("#title").val()}</td>`;
+                    hdata += `<td class="name">${$("#name").val()}</td>`;
+                    hdata += `<td>2025-04-24</td>`;
+                    hdata += `<td>1</td>`;
+                    hdata += `<td><button type="button" class="updateBtn">수정</button>`;
+                    hdata += `<button type="button" class="deleteBtn">삭제</button></td></tr>`;
+                    
+                    $("#tbody").append(hdata);
+                    no++
+                    $("#title").val("");
+                    $("#name").val("");
+                }//suFlag==0
+                else if(suFlag == 1){
+
+                    hdata = ``
+                    hdata += `<td>${updateNum}</td>`;
+                    hdata += `<td class="title">${$("#title").val()}</td>`;
+                    hdata += `<td class="name">${$("#name").val()}</td>`;
+                    hdata += `<td>2025-04-24</td>`;
+                    hdata += `<td>1</td>`;
+                    hdata += `<td><button type="button" class="updateBtn">수정</button>`;
+                    hdata += `<button type="button" class="deleteBtn">삭제</button></td>`;
+
+                    $(`#${updateNum}`).html(hdata);
+                    $("#title").val("");
+                    $("#name").val("");
+                    $("#save").text("저장");
+                    suFlag = 0;
+                }
+
+                    
+            })//#save
+
+            //정적 이벤트 - 이미 불러온 페이지에서 찾아 실행?
+            /*
+            $(".deleteBtn").click(function(){
+                alert("경고");
+                console.log($(this).text());
+            })//deleteBtn
+            */
+
+            //동적 이벤트 : 게시글 삭제
+            // document를 .다시 읽어서 (클릭하면, .deleteBtn을 찾아, function(){}을 실행)
+            // 두 개 이상의 이벤트를 여러 개 동시에 사용 가능
+            $(document).on("click",".deleteBtn",function(){
+                //console.log("부모 : ",$(this).closest("tr").attr("id"));
+                if(confirm("게시글을 삭제하시겠습니까?")){
+                    $(`#${$(this).closest("tr").attr("id")}`).remove();
+                }
+            });
+
+            //동적 이벤트 : 게시글 수정
+            $(document).on("click",".updateBtn",function(){
+                //alert("수정");
+                // let txt = $(this).closest("tr").text();
+                //console.log(txt);
+                updateNum = $(this).closest("tr").attr("id")
+
+                if(confirm(`${updateNum}번 게시글을 수정하시겠습니까?`)){
+                    $("#title").val($(this).closest("tr").children()[1].innerText);
+                    $("#name").val($(this).closest("tr").children()[2].innerText);
+                    $("#save").text("수정 저장");
+                    suFlag = 1;
+                    //console.log(suFlag);
+                }
+                
+
+                //console.log($(this).closest("tr").children()[1].innerText);
+                
+
+            })
+
+
+
+        })//jquery
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h2>게시판</h2>
+        <div id="input">
+            <div>글을 입력하세요.</div>
+            <input type="text" name="title" id="title" placeholder="제목을 입력하세요.">
+            <input type="text" name="title" id="name" placeholder="작성자를 입력하세요.">
+            <button type="button" id="save">저장</button>
+        </div>
+
+        <table>
+            <colgroup>
+              <col width="10%">
+              <col width="*">
+              <col width="12%">
+              <col width="12%">
+              <col width="12%">
+              <col width="20%">
+            </colgroup>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+                <th>기타</th>
+            </tr>
+            <tbody id="tbody">
+                <tr id="1">
+                    <td>1</td>
+                    <td class="title">이벤트 신청</td>
+                    <td class="name">관리자</td>
+                    <td>2025-04-24</td>
+                    <td>1</td>
+                    <td>
+                        <button type="button" class="updateBtn">수정</button>
+                        <button type="button" class="deleteBtn">삭제</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

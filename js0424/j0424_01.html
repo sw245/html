@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <script>
+        // .value >> val() / .innerText >> text() / .innerHTML >> html()
+        // append(), prepend() : 기존 html에 추가 (append-뒤, prepend-앞)
+        $(function(){
+            $("#cbtn").click(function(){
+                let hdata = "";
+                //alert("확인");
+                hdata += `<ul><li>사과</li>`;
+                hdata += `<li>배</li>`;
+                hdata += `<li>딸기</li>`;
+                hdata += `<li>바나나</li>`;
+                hdata += `<li>수박</li></ul>`;
+                //$(".txt").html(hdata);
+                //$(".txt").append(hdata);        
+                $(".txt").prepend(hdata);        
+                //alert("데이터를 추가했습니다.")
+
+            });
+
+            // html 속성 >> .attr() / css 속성 >> .css(딕셔너리 형태로 다수 속성 입력 가능)
+            $("#chg").click(function(){
+                $("li").css({"font-size":"30px","color":"red","border":"1px solid black"});
+            });
+
+            $("li").click(function(){
+                console.log($(this).text());
+                $(this).css({"font-size":"30px","color":"red","border":"1px solid black"})
+            });
+
+            // font-size:30px; border:1px solid black; border-radius:5px; color:red;
+        });
+
+
+        $("img").click(function(){
+            console.log($(this).attr("src"));
+            $(this).removeAttr("alt");
+        });
+    </script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="txt">
+        <ul>
+            <li>스위스</li>
+            <li>이탈리아</li>
+            <li>프랑스</li>
+            <li>오스트리아</li>
+        </ul>
+    </div>
+    <img src="images/best01.jpg">
+    <button id="cbtn">추가</button>
+    <button id="chg">변경</button>
+</body>
+</html>
