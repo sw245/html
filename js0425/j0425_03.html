@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/main2.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>DDDocument</title>
+    
+</head>
+<body>
+    <div id="container">
+        <h2>게시판</h2>
+        <div id="input">
+            <div>글을 입력하세요.</div>
+            <input type="text" name="title" id="title" placeholder="제목을 입력하세요.">
+            <input type="text" name="title" id="name" placeholder="작성자를 입력하세요.">
+            <button type="button" id="save">저장</button>
+            <button type="button" id="data_open3">데이터 가져오기</button>
+        </div>
+
+        <table>
+            <colgroup>
+              <col width="11%">
+              <col width="11%">
+              <col width="11%">
+              <col width="11%">
+              <col width="13%">
+              <col width="11%">
+              <col width="20%">
+              <col width="11%">
+            </colgroup>
+            <tr>
+                <th>사진번호</th>
+                <th>촬영일</th>
+                <th>작가</th>
+                <th>사진위치</th>
+                <th>키워드</th>
+                <th>제목</th>
+                <th>웹링크</th>
+                <th>기타</th>
+            </tr>
+            <tbody id="tbody">
+                <tr id="1">
+                    <td>사진번호</td>
+                    <td>촬영일</td>
+                    <td>작가</td>
+                    <td>사진위치</td>
+                    <td>키워드</td>
+                    <td>제목</td>
+                    <td>웹링크</td>
+                    <td>
+                        <button type="button" id="mod">수정</button>
+                        <button type="button" id="del">삭제</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="txt">
+            <img id="img" src="#">
+        </div>
+
+    </div>
+</body>
+</html>

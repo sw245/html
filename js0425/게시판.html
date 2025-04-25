@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>DDDocument</title>
+    <style>
+        *{margin:0; padding: 0;}
+        #container{width:1200px; margin:30px auto; text-align: center;}
+        h2{font-size: 40px; margin-bottom:40px;}
+        table{width:1200px; margin:0 auto;}
+        table,th,td{border:1px solid black; border-collapse: collapse;}
+        th{height: 60px; background: #eee;}
+        td{height:50px;}
+        button{width:100px; height:35px;}
+        input:focus {
+           outline: none; border:1px solid red;
+        }
+        input{margin-bottom:5px;}
+        #input{margin-bottom: 30px;}
+        #input div{font-size: 30px; margin-bottom: 10px;}
+        #input input{width:500px; height:32px; padding-left: 20px;}
+    </style>
+    <script>
+        // 등록, 삭제, 수정 구현 ㄱ
+        // 하나하나 확인하기
+
+        $(function(){
+            let hdata = ``;
+            let today = new Date();
+            let no = 1;
+            let board_no = 0;
+            let title, name = null;
+            let flag = 0;
+
+            // 초기 게시판 글 불러오기
+            init_board();
+
+            // #name에서 엔터 누르면 저장 실행
+            $(document).on("keyup","#name",function(key){
+                if(key.keyCode == 13 && flag == 0){
+                    board_prepend();
+                }else if(key.keyCode == 13 && flag == 1){
+                    board_modify();
+                }
+
+            })//key_enter
+
+            // 저장 버튼 실행
+            $(document).on("click","#save",function(){
+                if(flag == 0){
+                    board_prepend();
+                }else if(flag == 1){
+                    board_modify();
+                }
+
+            });//#save
+
+            // 삭제 버튼 실행
+            $(document).on("click","#del",function(){
+                board_no = $(this).closest("tr").attr("id");
+                if(confirm("정말 삭제하시겠습니까?")){
+                    $(`#${board_no}`).remove();
+                }
+                
+            });//#del
+
+            // 수정 버튼 실행
+            $(document).on("click","#mod",function(){
+                board_no = $(this).closest("tr").attr("id");
+                title = $(`#${board_no}`).children()[1].innerText;
+                name = $(`#${board_no}`).children()[2].innerText;
+                $("#title").val(title);
+                $("#name").val(name);
+                $("#save").text("수정 저장");
+                flag = 1;
+
+            });//#mod
+
+
+        // 함수 선언
+
+            // 게시글 수정 함수
+            function board_modify(){
+                // 변경
+                hdata = ``
+                hdata += `<td>${board_no}</td>`;
+                hdata += `<td class="title">${$("#title").val()}</td>`;
+                hdata += `<td>${$("#name").val()}</td>`;
+                hdata += `<td>${today.getFullYear()}-${today.getMonth()<10?`0${today.getMonth()}`:today.getMonth()}-${today.getDate()<10?`0${today.getDate()}`:today.getDate()}</td>`;
+                hdata += `<td>1</td>`;
+                hdata += `<td><button type="button" id="mod">수정</button>`;
+                hdata += `<button type="button" id="del">삭제</button></td>`;
+                $(`#${board_no}`).html(hdata);
+
+                // 초기화
+                flag = 0;
+                $("#save").text("저장");
+                $("#title").val("");
+                $("#name").val("");
+
+            }//board_modify
+
+            // 게시글 추가 함수
+            function board_prepend(){
+                // 추가
+                hdata = ``
+                hdata += `<tr id="${no}"><td>${no}</td>`;
+                hdata += `<td class="title">${$("#title").val()}</td>`;
+                hdata += `<td>${$("#name").val()}</td>`;
+                hdata += `<td>${today.getFullYear()}-${today.getMonth()<10?`0${today.getMonth()}`:today.getMonth()}-${today.getDate()<10?`0${today.getDate()}`:today.getDate()}</td>`;
+                hdata += `<td>1</td>`;
+                hdata += `<td><button type="button" id="mod">수정</button>`;
+                hdata += `<button type="button" id="del">삭제</button></td></tr>`;
+                no++;
+                $("#tbody").prepend(hdata);
+
+                // 초기화
+                $("#title").val("");
+                $("#name").val("");
+
+            }//board_prepend
+
+            // 초기 게시글 함수
+            function init_board(){
+                for(i=5;i>0;i--){
+                    hdata += `<tr id="${i}"><td>${i}</td>`;
+                    hdata += `<td class="title">이벤트 신청 ${i}</td>`;
+                    hdata += `<td>관리자</td>`;
+                    hdata += `<td>${today.getFullYear()}-${today.getMonth()<10?`0${today.getMonth()}`:today.getMonth()}-${today.getDate()<10?`0${today.getDate()}`:today.getDate()}</td>`;
+                    hdata += `<td>1</td>`;
+                    hdata += `<td><button type="button" id="mod">수정</button>`;
+                    hdata += `<button type="button" id="del">삭제</button></td></tr>`;
+                    no++;
+                    
+                    $("#tbody").html(hdata);
+                    
+                };//for
+                        
+            };//init_board
+
+        });//jQuery
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h2>게시판</h2>
+        <div id="input">
+            <div>글을 입력하세요.</div>
+            <input type="text" name="title" id="title" placeholder="제목을 입력하세요.">
+            <input type="text" name="title" id="name" placeholder="작성자를 입력하세요.">
+            <button type="button" id="save">저장</button>
+        </div>
+
+        <table>
+            <colgroup>
+              <col width="10%">
+              <col width="*">
+              <col width="12%">
+              <col width="12%">
+              <col width="12%">
+              <col width="20%">
+            </colgroup>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+                <th>기타</th>
+            </tr>
+            <tbody id="tbody">
+                <tr id="1">
+                    <td>1</td>
+                    <td class="title">이벤트 신청</td>
+                    <td>관리자</td>
+                    <td>2025-04-24</td>
+                    <td>1</td>
+                    <td>
+                        <button type="button" id="mod">수정</button>
+                        <button type="button" id="del">삭제</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

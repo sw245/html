@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>DDDocument</title>
+</head>
+<body>
+    <div id="container">
+        <h2>게시판</h2>
+        <div id="input">
+            <div>글을 입력하세요.</div>
+            <input type="text" name="title" id="title" placeholder="제목을 입력하세요.">
+            <input type="text" name="title" id="name" placeholder="작성자를 입력하세요.">
+            <button type="button" id="save">저장</button>
+            <button type="button" id="data_open">데이터 가져오기</button>
+        </div>
+
+        <table>
+            <colgroup>
+              <col width="10%">
+              <col width="*">
+              <col width="12%">
+              <col width="12%">
+              <col width="12%">
+              <col width="20%">
+            </colgroup>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+                <th>기타</th>
+            </tr>
+            <tbody id="tbody">
+                <tr id="1">
+                    <td>1</td>
+                    <td class="title">이벤트 신청</td>
+                    <td>관리자</td>
+                    <td>2025-04-24</td>
+                    <td>1</td>
+                    <td>
+                        <button type="button" id="mod">수정</button>
+                        <button type="button" id="del">삭제</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

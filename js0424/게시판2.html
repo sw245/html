@@ -31,11 +31,17 @@
         let flag = 0;
         let boardNo = 0;        // 수정, 삭제 시 게시글의 위치 찾기에 사용
         let today = new Date();
-        
+        let title, name, bdate, bhit = null;
 
         $(function(){
             
             boardList();
+
+            // #name위치에서 키보드 이벤트
+            $(document).on("keyup","#name",function(key){
+                if(key.keyCode==13 && flag==0) boardPrepend();
+                else if(key.keyCode==13 && flag==1) boardModify();
+            })
 
             // 저장버튼 이벤트
             $(document).on("click","#save",function(){
@@ -44,29 +50,11 @@
                     boardPrepend();
 
                 }else if(flag == 1){
-                    alert("수정저장버튼 출력");
-
-                    let title = $("#title").val();
-                    let name = $("#name").val();
-
-                    hdata = ``;
-                    hdata += `<td>${boardNo}</td>`;   
-                    hdata += `<td class="title">${title}</td>`;
-                    hdata += `<td>${name}</td>`;
-                    hdata += `<td>${today.getFullYear()}-${(today.getMonth()+1)<10?"0"+(today.getMonth()+1):today.getMonth()+1}-${today.getDate()<10?"0"+today.getDate():today.getDate()}</td>`;
-                    hdata += `<td>1</td>`;
-                    hdata += `<td><button type="button" id="mod">수정</button>`;
-                    hdata += `<button type="button" id="del">삭제</button></td>`;
-
-                    $(`#${boardNo}`).html(hdata);
-
-
-                    $("#title").val("");
-                    $("#name").val("");
-                    $("#save").text("게시글 저장");
-
-                    flag = 0;
-                }
+                    //alert("수정저장버튼 출력");
+                    //수정 저장 위치 >> boardNo
+                    boardModify();
+                    
+                }//if
 
             });//#save
 
@@ -83,25 +71,61 @@
 
             // 수정버튼 이벤트
             $(document).on("click","#mod",function(){
-                //alert("수정버튼 클릭");
                 //console.log($(this).closest("tr").attr("id"));
                 boardNo = $(this).closest("tr").attr("id");
+                if(confirm(`${boardNo}번 게시글을 수정하시겠습니까?`)){
+                    flag = 1;
+    
+                    //수정버튼 클릭 시 수정저장 이름 변경 및 다른 함수 출력
+                    $("#save").text("수정 저장");
+                    let trtd = $(this).closest("tr").children();
+                    // 수정시 데이터 변경할 변수들
+                    title = trtd[1].innerText;
+                    name = trtd[2].innerText;
+                    bdate = trtd[3].innerText;
+                    bhit = trtd[4].innerText;
+                    //console.log(trtd);
+                    //console.log(title);
+                    $("#title").val(title); 
+                    $("#name").val(name);
 
-                //수정버튼 클릭 시 수정저장 이름 변경 및 다른 함수 출력
-                $("#save").text("수정 저장");
-                $("#title").val($(this).closest("tr").children()[1].innerText); 
-                $("#name").val($(this).closest("tr").children()[2].innerText);
+                }//if
                 
-                flag = 1;
 
             });//#mod
             
         });//jQuery
 
+        // 게시글 수정함수
+        function boardModify(){
+            title = $("#title").val();
+            name = $("#name").val();
+
+            hdata = ``;
+            hdata += `<td>${boardNo}</td>`;   
+            hdata += `<td class="title">${title}</td>`;
+            hdata += `<td>${name}</td>`;
+            hdata += `<td>${today.getFullYear()}-${(today.getMonth()+1)<10?"0"+(today.getMonth()+1):today.getMonth()+1}-${today.getDate()<10?"0"+today.getDate():today.getDate()}</td>`;
+            hdata += `<td>${bhit}</td>`;
+            hdata += `<td><button type="button" id="mod">수정</button>`;
+            hdata += `<button type="button" id="del">삭제</button></td>`;
+
+            $(`#${boardNo}`).html(hdata);
+
+
+            $("#title").val("");
+            $("#name").val("");
+            $("#save").text("게시글 저장");
+            alert("게시글이 수정되었습니다.")
+
+            flag = 0;
+
+        };//boardModify
+
         // 게시글 1개 추가함수
         function boardPrepend(){
-            let title = $("#title").val();
-            let name = $("#name").val();
+            title = $("#title").val();
+            name = $("#name").val();
 
             hdata = ``;
             hdata += `<tr id="${no}"><td>${no}</td>`;
@@ -116,10 +140,10 @@
             $("#tbody").prepend(hdata);
 
             //초기화
-            title = ""
-            name = ""
+            $("#title").val(""); 
+            $("#name").val("");
 
-        }
+        }//boardPrepend
 
         // 게시글 5개 리스트 출력
         function boardList(){
