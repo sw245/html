@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <script>
+
+        // 특수문자 1개 이상, 숫자 1개 이상, 문자 1개 이상 확인
+        // 전화번호 2 or 3자리 - 3 or 4자리 - 4자리 확인
+
+        // 정규 표현식
+        // [0-9] [0123456789] [\d] / [a-z] [abcdefghijklmnopqrstuvwxyz] / [a-zA-Z] / [ㄱ-ㅎ가-힣]
+        // []{3,5} 3자리 이상 5자리 이하
+        // let telphn = /^[0-9]{3,5}$/;     3자리 이상, 5자리 이하 숫자인지
+        // let idptn = /^[a-zA-Z0-9]{2,8}$/;
+        // let idptn = /^[a-zA-Z]{1}[0-9]{2-8}$/;
+        // let nameptn = /^[ㄱ-ㅎ가-힣]{3,}$/;  3자리 이상 한글만 입력
+        function cbtn(){
+            let n =$('#id').val();
+
+            let pwptn = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_]){3,}$/
+            console.log("확인 : ",pwptn.test(n));
+
+            /*
+            // 첫글자는 영문으로 시작, 4-16자리의 영문,숫자,언더바(_)만 사용 가능하게 구현.
+            let id_value = /^[a-zA-Z]{1}[a-zA-Z0-9_]{3,15}$/;
+            console.log(id_value.test(n));
+            */
+
+            /*
+            // 이름
+            let nameptn = /^[ㄱ-ㅎ가-힣]{3,10}$/;
+            console.log("확인 : ",nameptn.test(n));
+            */
+
+            /*
+            // 전화번호 (|) >> or: 하나 선택
+            let telptn = /^(02|051|032)-([0-9]{3}|[\d]{4})-[0-9]{4}$/;
+            console.log("확인 : ",telptn.test(n));
+            */
+
+            /*
+            //아이디
+            let idptn = /^[a-zA-Z]{2,5}$/;
+            console.log(idptn.test(n));
+            */
+
+
+            /*
+            let telphn = /^[a-z]{3,5}$/;  // [숫자인지 아닌지 확인]
+            console.log(telphn.test(n));
+            if(telphn.test(n)) alert('영소문자 3-5자리가 입력되었습니다.');
+            else alert("영소문자 3-5자리가 아닙니다.");
+            */
+        };
+
+
+        //$(function(){
+            /*
+            $("#cbtn").click(function(){
+
+            });//#cbtn
+            */
+
+        //});//jquery
+
+        /*
+        function cbtn(){
+            //alert();
+            let n = $("#tel").val();
+            if(isNaN(n)){   // 숫자가 아닐 경우 true (Not a number)
+                alert("숫자가 아닙니다.");
+            }else{  // 숫자일 경우 false
+                alert("숫자입니다.");
+            }
+
+        }//cbtn
+        */
+          
+    </script>
+</head>
+<body>
+    <label>비밀번호</label>
+    <input type="text" name="id" id="id"><br>
+    <button id="cbtn" onclick="cbtn()">확인</button>
+    <!--
+        <label>전화번호</label>
+        <input type="text" name="tel" id="tel"><br>
+        <button id="cbtn" onclick="cbtn()">확인</button>
+        -->
+
+
+</body>
+</html>
