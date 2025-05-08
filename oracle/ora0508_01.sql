@@ -254,3 +254,41 @@ insert into stuscore3(sno,kor) select sno,kor from stuscore;
 select * from stuscore2;
 
 create table stuscore2 as select * from stuscore;
+
+update stuscore2 set sclass=0;
+commit;
+
+-- 반 별 일등
+select * from stuscore;
+select * from stuscore s,(select sclass,max(total) max from stuscore group by sclass) m
+where s.sclass=m.sclass and s.total=max order by s.sclass;
+
+select * from stuscore
+where (sclass,total) in (select sclass,max(total) from stuscore group by sclass)
+order by sclass;
+
+select * from stuscore2;
+-- stuscore2 반 부여
+update stuscore2 set sclass = case
+when sno<=10 then 1
+when sno<=20 then 2
+when sno<=30 then 3
+--...--
+when sno<=110 then 11
+end;
+
+rollback;
+
+update stuscore2 set sclass = case when sno between 0 and 10 then 1 end 
+where sno between 0 and 10;
+
+-- rownum 11-20 member table
+select * from (select rownum rnum,m.* from member m)
+where rnum between 11 and 20;
+
+select rownum,m.* from member m;
+
+-- 반 별 최하등 학생 출력
+select * from stuscore
+where (sclass,total) in (select sclass,min(total) from stuscore group by sclass) ;
+select sclass,min(total) from stuscore group by sclass;
